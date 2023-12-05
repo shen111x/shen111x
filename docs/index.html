@@ -1,69 +1,98 @@
-<!-- Inspired from : https://threejs.org/examples/#misc_controls_orbit -->
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>three.js webgl - head controls</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<head>
+  <!-- PUT THE BASE OF THE CLONED JEELIZ FACE FILTER GITHUB AS BASE HREF: -->
+  <base href="jeelizFaceFilter-master/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <script src="libs/cesium/Cesium.js"></script>
+  <script src="dist/jeelizFaceFilter.js"></script>
+  <script src="HeadControls.js"></script>
 
-    <script src="js/three.min.js"></script>
-
-    <!-- JEEFACEFILTER API (required by HeadControls.js) -->
-    <script src="js/jeelizFaceFilter.js"></script>
-
-    <!-- HeadControls script -->
-    <script src="js/HeadControls.js"></script>
-
-    <!-- HeadControls Wrapper (provides THREE.HeadControls) -->
-    <script src="js/ThreeHeadControls.js"></script>
-
-    <!-- Main script: -->
-    <script src="js/main.js"></script>
-
-    <style>
-      body {
-        color: #000;
-        font-family:Monospace;
-        font-size:13px;
-        text-align:center;
-        font-weight: bold;
-
-        background-color: #fff;
-        margin: 0px;
-        overflow: hidden;
+  <style>
+      @import url(libs/cesium/Widgets/widgets.css);
+      html, body, #cesiumContainer {
+          width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
       }
 
-      #info {
-        color:#000;
-        position: absolute;
-        top: 0px; width: 100%;
-        padding: 5px;
-      }
+      html, body, #cesiumContainer {
+        width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+    }
 
-      a {
-        color: red;
-      }
+     /* head control button will be placed at top and horizontally centered over Cesium Viewer */
+    #startHeadControlsButton {
+        position: fixed;
+        width: 256px;
+        top: 1em;
+        left: 50%;
+        margin-left: -128px;
+        cursor: pointer;
+    }
 
-      #headControlsCanvas {
+    /* head control canvas will be at right bottom and over Cesium map */
+    #headControlsCanvas {
         position: fixed;
         right: 0px;
-        bottom: 0px;
+        bottom: 30px;
         z-index: 1000;
         transform-origin: bottom right;
         max-height: 25%;
         max-width: 25%;
       }
-    </style>
-  </head>
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer">
 
-  <body>
-    <div id="container"></div>
-    <div id="info">
-      <a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - head controls example. 3D scene from orbit control example.
-    </div>
-
-    <!-- This canvas will be used to display the head tracking: //-->
+    <button id='startHeadControlsButton'>START HEAD CONTROLLED NAVIGATION !</button>
     <canvas id='headControlsCanvas' width='512' height='512'></canvas>
- 
-  </body>
+
+  </div>
+
+  <script>
+    //initialize Cesium
+    var CESIUMVIEWER = new Cesium.Viewer('cesiumContainer');
+    var DOMbutton = document.getElementById('startHeadControlsButton');
+DOMbutton.onclick = function(){
+  HeadControls.init({
+    canvasId: 'headControlsCanvas',
+    callbackMove: callbackMove, //will be explained later...
+    callbackReady: function(errCode){
+      if (errCode){
+        console.log('ERROR : HEAD CONTROLS NOT READY. errCode =', errCode);
+      } else {
+        console.log('INFO : HEAD CONTROLS ARE READY :)');
+        HeadControls.toggle(true);
+      }
+    },
+    NNCpath: 'neuralNets/NN_DEFAULT.json' // parent folder of NNC.json (neuron network JSON)
+  }); //end HeadControls.init params
+}; //end DOMbutton.onclick
+
+
+
+// we group the settings; it is cleaner :)
+var SETTINGS={
+  zoomSensibility: 5.5,
+  panSensibility: 0.00000015
+};
+
+function callbackMove(mv){
+  var cameraHeight = CESIUMVIEWER.scene.globe.ellipsoid.cartesianToCartographic(CESIUMVIEWER.camera.position).height / 1000.0 || Number.MAX_VALUE;
+    
+  if (mv.dZ !== 0) { //move head forward/backward
+    var zoomAmount = mv.dZ * SETTINGS.zoomSensibility * cameraHeight;
+    CESIUMVIEWER.camera.moveForward(zoomAmount);
+  }
+  if (mv.dRx !== 0) { //turn head up-down
+    var panAmountX = SETTINGS.panSensibility * mv.dRx * cameraHeight;
+    CESIUMVIEWER.scene.camera.rotateUp(panAmountX);
+  }
+  if (mv.dRy !== 0) { //turn head left-right
+    var panAmountY = SETTINGS.panSensibility * mv.dRy* cameraHeight;
+    CESIUMVIEWER.scene.camera.rotate(Cesium.Cartesian3.UNIT_Z, panAmountY);
+  }
+}
+  </script>
+</body>
 </html>
