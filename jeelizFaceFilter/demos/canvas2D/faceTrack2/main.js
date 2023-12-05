@@ -40,7 +40,7 @@ function main(){
           var newLeftValue2 = (faceCoo.x / 600) * screenheight;
 
           trailElement.style.right = newLeftValue + "px";
-          trailElement.style.top = newLeftValue + "px";
+          trailElement.style.bottom = newLeftValue + "px";
           
           // 设置 trailElement 的 left 值
           //trailElement.style.left = newLeftValue + "px";
