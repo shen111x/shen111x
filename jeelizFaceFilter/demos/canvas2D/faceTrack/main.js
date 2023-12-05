@@ -13,7 +13,7 @@ function main(){
       console.log('INFO: JEELIZFACEFILTER IS READY');
       CVD = JeelizCanvas2DHelper(spec);
       CVD.ctx.strokeStyle = 'black';
-      CVD.ctx.fill = 'black';
+      
     },
 
     // called at each render iteration (drawing loop):
