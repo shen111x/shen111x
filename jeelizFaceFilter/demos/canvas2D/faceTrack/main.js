@@ -12,7 +12,7 @@ function main(){
 
       console.log('INFO: JEELIZFACEFILTER IS READY');
       CVD = JeelizCanvas2DHelper(spec);
-      CVD.ctx.lineWidth = 10;
+      CVD.ctx.lineWidth = 50;
       CVD.ctx.strokeStyle = "#000000";
       CVD.ctx.fillStyle = "#000000";
       
