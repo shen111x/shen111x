@@ -4,8 +4,8 @@ let camera = null, controls = null, scene = null, renderer = null;
 function main() {
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color( 0x000000 );
-  scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
+  scene.background = new THREE.Color( 0xffffff );
+  scene.fog = new THREE.FogExp2( 0xcccccc, 0.2 );
 
   renderer = new THREE.WebGLRenderer();
   renderer.setPixelRatio( window.devicePixelRatio );
