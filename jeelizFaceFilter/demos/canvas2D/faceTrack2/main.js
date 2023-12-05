@@ -32,15 +32,15 @@ function main(){
           var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
           // 计算新的 left 值
-          var newLeftValue = (600 / faceCoo.x) * screenWidth;
+          var newLeftValue = (faceCoo.x / 600) * screenWidth;
 
           var screenheight = window.innerHeight || document.documentElement.clientheight || document.body.clientheight;
 
           // 计算新的 left 值
-          var newLeftValue2 = (600 / faceCoo.x) * screenheight;
+          var newLeftValue2 = (faceCoo.x / 600) * screenheight;
 
           trailElement.style.left = newLeftValue + "px";
-          trailElement.style.top = newLeftValue2 + "px";
+          trailElement.style.top = newLeftValue + "px";
           
           // 设置 trailElement 的 left 值
           //trailElement.style.left = newLeftValue + "px";
