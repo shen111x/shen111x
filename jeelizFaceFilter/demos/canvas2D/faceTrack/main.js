@@ -14,6 +14,7 @@ function main(){
       CVD = JeelizCanvas2DHelper(spec);
       CVD.ctx.lineWidth = 10;
       CVD.ctx.strokeStyle = "#000000";
+      CVD.ctx.fillStyle = "#000000";
       
       
     },
@@ -25,6 +26,7 @@ function main(){
         const faceCoo = CVD.getCoordinates(detectState);
         CVD.ctx.clearRect(0, 0, CVD.canvas.width, CVD.canvas.height);
         CVD.ctx.strokeRect(faceCoo.x, faceCoo.y, faceCoo.w, faceCoo.h);
+        CVD.ctx.fillRect(faceCoo.x, faceCoo.y, faceCoo.w, faceCoo.h);
         CVD.update_canvasTexture();
       }
       CVD.draw();
