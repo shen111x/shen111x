@@ -27,8 +27,8 @@ function main(){
 
           const trailElement = document.createElement("div");
           trailElement.className = "trail";
-          trailElement.style.left = faceCoo.x + "px";
-          trailElement.style.top = faceCoo.y + "px";
+          trailElement.style.left = faceCoo.y + "px";
+          trailElement.style.top = faceCoo.x + "px";
           document.body.appendChild(trailElement);
 
            // 移除多余的轨迹元素
