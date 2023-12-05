@@ -27,8 +27,30 @@ function main(){
 
           const trailElement = document.createElement("div");
           trailElement.className = "trail";
-          trailElement.style.left = faceCoo.y + "px";
-          trailElement.style.top = faceCoo.x + "px";
+
+
+          var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+          // 计算新的 left 值
+          var newLeftValue = (faceCoo.x / 600) * screenWidth;
+
+          var screenheight = window.innerHeight || document.documentElement.clientheight || document.body.clientheight;
+
+          // 计算新的 left 值
+          var newLeftValue2 = (faceCoo.x / 600) * screenheight;
+
+          trailElement.style.left = newLeftValue + "px";
+          trailElement.style.top = newLeftValue2 + "px";
+          
+          // 设置 trailElement 的 left 值
+          //trailElement.style.left = newLeftValue + "px";
+          //trailElement.style.left = faceCoo.x + "px";
+          trailElement.style.top = faceCoo.y + "px";
+
+
+
+
+
           document.body.appendChild(trailElement);
 
            // 移除多余的轨迹元素
