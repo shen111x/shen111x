@@ -45,7 +45,7 @@ function main(){
           // 设置 trailElement 的 left 值
           //trailElement.style.left = newLeftValue + "px";
           //trailElement.style.left = faceCoo.x + "px";
-          trailElement.style.top = faceCoo.y + "px";
+          //trailElement.style.top = faceCoo.y + "px";
 
 
 
@@ -55,7 +55,7 @@ function main(){
 
            // 移除多余的轨迹元素
           const trailElements = document.querySelectorAll(".trail");
-          if (trailElements.length > 60) {
+          if (trailElements.length > 40) {
           document.body.removeChild(trailElements[0]);
           }
 
