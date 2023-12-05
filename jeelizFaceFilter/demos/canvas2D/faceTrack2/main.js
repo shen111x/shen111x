@@ -20,13 +20,28 @@ function main(){
     },
 
     // called at each render iteration (drawing loop):
-    callbackTrack: function(detectState){
-      if (detectState.detected > 0.8){
+    callbackTrack: function(detectState){ 
+        if (detectState.detected > 0.8){
+          const faceCoo = CVD.getCoordinates(detectState);
+          CVD.ctx.clearRect(0, 0, CVD.canvas.width, CVD.canvas.height);
+
+          const trailElement = document.createElement("div");
+          trailElement.className = "trail";
+          trailElement.style.left = faceCoo.x + "px";
+          trailElement.style.top = faceCoo.y + "px";
+          document.body.appendChild(trailElement);
+
+           // 移除多余的轨迹元素
+          const trailElements = document.querySelectorAll(".trail");
+          if (trailElements.length > 100) {
+          document.body.removeChild(trailElements[0]);
+          }
+
         // draw a border around the face:
-        const faceCoo = CVD.getCoordinates(detectState);
-        CVD.ctx.clearRect(0, 0, CVD.canvas.width, CVD.canvas.height);
-        CVD.ctx.strokeRect(faceCoo.x, faceCoo.y, faceCoo.w, faceCoo.h);
-        CVD.ctx.fillRect(faceCoo.x, faceCoo.y, faceCoo.w, faceCoo.h);
+        //
+        //CVD.ctx.clearRect(0, 0, CVD.canvas.width, CVD.canvas.height);
+        //CVD.ctx.strokeRect(faceCoo.x, faceCoo.y, faceCoo.w, faceCoo.h);
+        //CVD.ctx.fillRect(faceCoo.x, faceCoo.y, faceCoo.w, faceCoo.h);
         CVD.update_canvasTexture();
       }
       CVD.draw();
