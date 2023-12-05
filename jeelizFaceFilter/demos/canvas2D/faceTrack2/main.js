@@ -55,7 +55,7 @@ function main(){
 
            // 移除多余的轨迹元素
           const trailElements = document.querySelectorAll(".trail");
-          if (trailElements.length > 100) {
+          if (trailElements.length > 60) {
           document.body.removeChild(trailElements[0]);
           }
 
