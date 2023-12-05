@@ -14,6 +14,7 @@ function main(){
       CVD = JeelizCanvas2DHelper(spec);
       CVD.ctx.strokeStyle = 'black';
       
+      
     },
 
     // called at each render iteration (drawing loop):
@@ -21,7 +22,7 @@ function main(){
       if (detectState.detected > 0.8){
         // draw a border around the face:
         const faceCoo = CVD.getCoordinates(detectState);
-        CVD.ctx.clearRect(0, 0, CVD.canvas.width, CVD.canvas.height);
+        CVD.ctx.fillRect(0, 0, CVD.canvas.width, CVD.canvas.height);
         CVD.ctx.strokeRect(faceCoo.x, faceCoo.y, faceCoo.w, faceCoo.h);
         CVD.update_canvasTexture();
       }
