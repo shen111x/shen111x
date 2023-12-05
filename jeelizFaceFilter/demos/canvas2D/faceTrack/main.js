@@ -12,7 +12,8 @@ function main(){
 
       console.log('INFO: JEELIZFACEFILTER IS READY');
       CVD = JeelizCanvas2DHelper(spec);
-      CVD.ctx.strokeStyle = 'black';
+      CVD.ctx.lineWidth = 30;
+      CVD.ctx.strokeStyle = "#000000";
       
       
     },
@@ -22,7 +23,7 @@ function main(){
       if (detectState.detected > 0.8){
         // draw a border around the face:
         const faceCoo = CVD.getCoordinates(detectState);
-        CVD.ctx.fillRect(0, 0, CVD.canvas.width, CVD.canvas.height);
+        CVD.ctx.clearRect(0, 0, CVD.canvas.width, CVD.canvas.height);
         CVD.ctx.strokeRect(faceCoo.x, faceCoo.y, faceCoo.w, faceCoo.h);
         CVD.update_canvasTexture();
       }
