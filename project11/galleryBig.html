@@ -45,11 +45,9 @@ body, html, div, iframe {
 <body>
   <div class="container" onscroll="updateInfo()" onclick="nextSlide()">
     <div class="gallery" onclick="restartInterval()">
-      <div class="single"> <img src="images/1.png" alt="Image 1"> </div>
-      <div class="single"> <img src="images/2.png" alt="Image 1"> </div>
-      <div class="single"> <img src="images/3.png" loading="lazy" alt="Image 1"> </div>
-      <div class="single"> <img src="images/4.png" loading="lazy" alt="Image 1"> </div>
-
+      <div class="single"> <img src="images/1.jpg" alt="Image 1"> </div>
+      <div class="single"> <video width="100%" height="auto" playsinline autoplay loop muted><source src="images/2.mp4" type="video/mp4">Your browser does not support the video tag.</video>  </div>
+      
 
     </div>
   </div>
@@ -61,7 +59,7 @@ body, html, div, iframe {
   </div> !-->
 
   <script>
-    let imageQuantity = 4;
+    let imageQuantity = 2;
     let scrollNeed = 0;
     let intervalId;
 
