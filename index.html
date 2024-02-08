@@ -461,25 +461,25 @@ line-height: 1.2;
 
     <iframe  src="project1/index.html" class="projects" ></iframe>
 
-    <iframe  src="project2/index.html" class="projects" loading="lazy"></iframe>
+    <iframe  src="project2/index.html" class="projects lazy-load" loading="lazy"></iframe>
 
-    <iframe  src="project3/index.html" class="projects" loading="lazy"></iframe>
+    <iframe  src="project3/index.html" class="projects lazy-load" loading="lazy"></iframe>
 
-    <iframe  src="project4/index.html" class="projects" loading="lazy"></iframe>
+    <iframe  src="project4/index.html" class="projects lazy-load" loading="lazy"></iframe>
 
-    <iframe  src="project5/index.html" class="projects" loading="lazy"></iframe>
+    <iframe  src="project5/index.html" class="projects lazy-load" loading="lazy"></iframe>
 
-    <iframe  src="project6/index.html" class="projects" loading="lazy"></iframe>
+    <iframe  src="project6/index.html" class="projects lazy-load" loading="lazy"></iframe>
  
-    <iframe  src="project7/index.html" class="projects" loading="lazy"></iframe>
+    <iframe  src="project7/index.html" class="projects lazy-load" loading="lazy"></iframe>
 
-    <iframe  src="project8/index.html" class="projects" loading="lazy"></iframe>
+    <iframe  src="project8/index.html" class="projects lazy-load" loading="lazy"></iframe>
  
-    <iframe  src="project9/index.html" class="projects" loading="lazy"></iframe>
+    <iframe  src="project9/index.html" class="projects lazy-load" loading="lazy"></iframe>
 
-    <iframe  src="project10/index.html" class="projects" loading="lazy"></iframe>
+    <iframe  src="project10/index.html" class="projects lazy-load" loading="lazy"></iframe>
 
-    <iframe  src="project11/index.html" class="projects" loading="lazy"></iframe>
+    <iframe  src="project11/index.html" class="projects lazy-load" loading="lazy"></iframe>
  
   
 
@@ -531,4 +531,23 @@ line-height: 1.2;
 
 
   </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var lazyLoadElements = document.querySelectorAll('.lazy-load');
+
+    var intersectionObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('loaded');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 }); // 调整 threshold 值根据实际需求
+
+    lazyLoadElements.forEach(function(element) {
+        intersectionObserver.observe(element);
+    });
+});
+  </script>
 </html>
