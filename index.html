@@ -481,7 +481,7 @@ line-height: 1.2;
 
     <iframe  src="project4/index.html" class="projects" loading="lazy"></iframe>
 
-    <iframe  src="project5/index.html" class="projects" style="height:173vw;" loading="lazy"></iframe>
+    <iframe  src="project5/index.html" class="projects" loading="lazy"></iframe>
 
     <iframe  src="project6/index.html" class="projects" loading="lazy"></iframe>
  
@@ -549,25 +549,30 @@ line-height: 1.2;
   <script>
 
 
-
-
     var header = document.getElementById('scrollHidden');
     var prevScrollPos = window.pageYOffset;
-    
+
     window.onscroll = function() {
       var currentScrollPos = window.pageYOffset;
-    
-      if (currentScrollPos == 0) {
-        header.classList.remove("hidden"); // 当滚动到顶部时，默认显示
-      } else if (prevScrollPos > currentScrollPos) {
-        header.classList.remove("hidden"); // 向上滚动，显示 div
-      } else {
-        header.classList.add("hidden"); // 向下滚动，隐藏 div
+      var pageScrollX = window.pageXOffset;
+      var maxScrollPos = Math.max(window.scrollMaxY || 0, document.body.scrollHeight - window.innerHeight);
+
+      // 添加限制条件
+      if ((currentScrollPos > 0 && currentScrollPos < maxScrollPos) && currentScrollPos !== pageScrollX) {
+        if (currentScrollPos === 0 || currentScrollPos === maxScrollPos) {
+          header.classList.remove("hidden"); // 当滚动到顶部或底部时，默认显示
+        } else if (prevScrollPos > currentScrollPos) {
+          header.classList.remove("hidden"); // 向上滚动，显示 div
+        } else {
+          header.classList.add("hidden"); // 向下滚动，隐藏 div
+        }
       }
-    
+
       prevScrollPos = currentScrollPos;
     }
-        </script>
+
+    
+  </script>
 
   
 </html>
