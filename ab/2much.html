@@ -1,0 +1,310 @@
+<!doctype html>
+
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="red">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untitled Document</title>
+<link href="CSS/2much.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+	
+	
+	
+<body>
+
+
+	<div class="wwen" style="width:100vw;height:100vh; z-index:5; position: fixed; pointer-events:none;text-align: center">
+	
+  <img src="images/Header2@400x.png" height="80%" class="dawen" >
+						
+		
+		<div class="wen" style="position:absolute; bottom:0; float:left; cursor:pointer; ">
+	
+		
+					<a href="2much.html">
+						<img src="images/Header2@400x.png" height="200%" style="float:left;" >
+					</a>
+				
+		</div>
+		
+	
+	</div>
+
+	<header style="width:100%;">
+		
+		<div class="A">
+			
+			<div class="a1" style="cursor:pointer">
+				
+				<a href="index.html" > <img src="images/headerlogo@400x.png"  height="120%" style="margin-top:0.5vw">
+				</a>
+			
+			
+			
+			</div>
+			
+			
+			<div class="a2">
+				
+				
+				
+				<div class="divC" id="myDivC" style="cursor:pointer">
+					
+					<img src="images/Header3@400x.png" style="height:1.2vw; float:right;" >
+					
+					<div class="hidden2">
+						<img src="images/contact.png" width="68%" style="float:right;">
+					</div>
+					
+					
+				
+				</div>
+				<div class="divB" id="myDivB" style="cursor:pointer">
+					
+					<img class="thenarrative" src="images/Header1@400x.png"  style="height:1.2vw; float:right;" >
+					
+					<div class="hidden">
+						<img src="images/narrative.png" width="100%" style="float:right;">
+					</div>
+				
+				</div>
+			
+				
+				
+				
+			</div>
+				
+				
+			
+			
+			</div>
+		
+		
+		
+		
+		
+		
+		
+	
+		
+</header>
+	
+
+		
+	<div class="body_div_background" >
+		
+	 <div id="video-grid">
+    <!-- 第一行 -->
+    <div class="video-container red-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container green-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container blue-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container yellow-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container purple-filter">
+      <video autoplay></video>
+    </div>
+
+    <!-- 第二行 -->
+    <div class="video-container red-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container green-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container blue-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container yellow-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container purple-filter">
+      <video autoplay></video>
+    </div>
+
+    <!-- 第三行 -->
+    <div class="video-container red-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container green-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container blue-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container yellow-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container purple-filter">
+      <video autoplay></video>
+    </div>
+
+    <!-- 第四行 -->
+    <div class="video-container red-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container green-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container blue-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container yellow-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container purple-filter">
+      <video autoplay></video>
+    </div>
+
+    <!-- 第五行 -->
+    <div class="video-container red-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container green-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container blue-filter">
+      <video autoplay></video>
+    </div>
+    <div class="video-container yellow-filter">
+      <video autoplay></video>
+    </div>
+
+  </div>
+
+	
+	</div>
+	
+	
+	
+	
+	
+</body>
+	
+	
+	
+	
+
+
+
+<!------script------->
+	<!------script------->
+	<!------script------->
+	<!------script------->
+	<!------script------->
+	
+	
+	
+	
+	
+	
+	
+	<script>
+		
+		
+		
+	
+    // 获取视频元素
+    var videos = document.querySelectorAll('.video-container video');
+
+    // 检查浏览器是否支持getUserMedia
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      // 请求访问用户的摄像头
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+          // 将摄像头流设置到每个video元素中
+          videos.forEach(function(video) {
+            video.srcObject = stream;
+          });
+        })
+        .catch(function(error) {
+          console.error('Error accessing the camera:', error);
+        });
+    } else {
+      console.error('getUserMedia is not supported in this browser');
+    }
+ 
+		
+		
+		
+		
+		
+<!------script------->
+	<!------script------->
+	<!------script------->
+	<!------script------->
+	<!------script------->
+	
+	
+	
+	
+	
+	
+			var divB = document.getElementById("myDivB");
+	
+        var isBExpanded = false;
+
+        divB.onclick = function() {
+            if (isBExpanded) {
+                // 缩小divB
+                divB.style.width = "8vw";
+                divB.style.height = "1.2vw";
+				divB.style.overflow = "hidden";
+			
+				
+            } else {
+                // 放大div5
+                divB.style.width = "40vw";
+                divB.style.height = "100vh";
+				divB.style.overflow = "scroll";
+				
+            }
+
+            // 切换状态
+            isBExpanded = !isBExpanded;
+        };
+		
+		
+		
+		var divC = document.getElementById("myDivC");
+	
+        var isCExpanded = false;
+
+        divC.onclick = function() {
+            if (isCExpanded) {
+                // 缩小divB
+                divC.style.width = "8vw";
+                divC.style.height = "1.2vw";
+				divC.style.overflow = "hidden";
+			
+				
+            } else {
+                // 放大div5
+                divC.style.width = "20vw";
+                divC.style.height = "100vh";
+				divC.style.overflow = "scroll";
+				
+            }
+
+            // 切换状态
+            isCExpanded = !isCExpanded;
+        };
+		
+		
+		
+		
+		
+</script>
+	
+	
+	
+</html>
