@@ -59,7 +59,7 @@
     });
 
     function fetchImageQuantity() {
-      fetch('images/small/')
+      fetch('../images/small/')
         .then(response => response.text())
         .then(text => {
           // Count the number of images in the 'small' folder
