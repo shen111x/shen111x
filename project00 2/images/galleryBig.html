@@ -60,7 +60,7 @@
     });
 
     function fetchImageQuantity() {
-      fetch('/small/')
+      fetch('../images/big/')
         .then(response => response.text())
         .then(text => {
           // Count the number of images and videos in the 'small' folder
@@ -89,12 +89,12 @@
         const fileType = image.href.split('.').pop().toLowerCase();
         if (fileType === 'gif' || fileType === 'png' || fileType === 'jpg' || fileType === 'jpeg') {
           const img = document.createElement('img');
-          img.src = `/small/ ${index + 1}.${fileType}`; // Assuming the images are named sequentially like 1.png, 2.png, etc.
+          img.src = `../images/big/${index + 1}.${fileType}`; // Assuming the images are named sequentially like 1.png, 2.png, etc.
           img.alt = `Image ${index + 1}`;
           div.appendChild(img);
         } else if (fileType === 'mov' || fileType === 'mp4') {
           const video = document.createElement('video');
-          video.src = `../images/small/${index + 1}.${fileType}`; // Assuming the videos are named sequentially like 1.mov, 2.mov, etc.
+          video.src = `../images/big/${index + 1}.${fileType}`; // Assuming the videos are named sequentially like 1.mov, 2.mov, etc.
           video.autoplay = true;
           video.loop = true;
           video.muted = true;
@@ -148,13 +148,13 @@
       clearInterval(intervalId);
       intervalId = setInterval(() => {
         nextSlide();
-      }, 3800);
+      }, 4500);
     }
 
     // 第一次启动额外添加的时间
     intervalId = setInterval(() => {
       nextSlide();
-    }, 800);
+    }, 1000);
   </script>
 </body>
 </html>
