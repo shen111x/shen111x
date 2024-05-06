@@ -40,6 +40,36 @@ body {
         background-color: white;
         display: inline;
     }
+
+    .nav{ 
+        position: fixed; /* 将.nav元素固定在页面上 */
+        top: 0; /* 距离顶部的距离为0 */
+        width: 100vw; /* 宽度占满整个页面 */
+        height: 10vw; /* 高度为10vw */
+        z-index: 9999; /* 设置z-index以确保.nav在其他内容之上 */
+        opacity: 0; /* 初始时透明 */
+        transition: opacity 0.3s ease; /* 添加过渡效果 */
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        
+    }
+    .navsmall{ 
+        opacity: 100;
+    }
+    .navsub{
+        width:19vw;
+        height:10vw;
+        float:right;
+        margin-right: 13px;
+       
+    }
+
+    .navblank{
+        width:38vw;
+
+    }
+
     .right-top {
         width:100%;
         height:50%;
@@ -54,6 +84,11 @@ body {
         color:black;
         transition: transform 0.3s ease; /* 添加过渡效果 */
         transform: translateY(0%);
+    }
+
+    h2 {
+        float: right;
+        margin-right: 13px;
     }
 
     .h1small {
@@ -80,6 +115,14 @@ body {
             <div class="right-top"></div>
             <div class="right-bottom"></div>
         </div>
+        
+    </div>
+    <div class="nav">
+        <div class="navblank"></div>
+        <div class="navsub"><p style="float: right; margin-right: 13px;padding:0;"><a href="index.html" target="_parent" style="color:black; text-decoration: none;">Home</a></p></div>
+        <div class="navsub"><p style="float: right; margin-right: 13px;padding:0;"><a href="works.html" target="_parent" style="color:black; text-decoration: none;">Works</a></p></div>
+        <div class="navsub"><p style="float: right; margin-right: 13px;padding:0;"><a href="about.html" target="_parent" style="color:black; text-decoration: none;">About</a></p></div>
+
     </div>
 </body>
 <!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY -->
@@ -92,15 +135,21 @@ window.addEventListener('message', function(event) {
         var background = document.querySelector('.background');
         var h1Element = document.querySelector('h1');
         var leftElement = document.querySelector('.left');
+        var nav = document.querySelector('.nav');
 
         if (scrollDirection === 'down') {// 回上面
             background.classList.remove("backgroundsmall");
             h1Element.classList.remove("h1small");
             leftElement.classList.remove("leftsmall");
+            nav.classList.remove("navsmall");
+
         } else {// 去下面
             background.classList.add("backgroundsmall");
             h1Element.classList.add("h1small");
-            leftElement.classList.add("leftsmall");}}});
+            leftElement.classList.add("leftsmall");
+            nav.classList.add("navsmall");
+            
+            }}});
 </script>
 <!-- JavaScript -->
 
