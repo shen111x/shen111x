@@ -42,7 +42,7 @@
         
         [id^="projectTitle"] {
             position: sticky;
-            top: 0;
+            top: 30vw;
 }
 
 
@@ -212,16 +212,28 @@ var scrollDirection
     };
     var iframeWindow = document.querySelector('.header').contentWindow;
     iframeWindow.postMessage(message, '*');
+
+
+   // ------
+
+   var projectTitles = document.querySelectorAll('[id^="projectTitle"]');
+    projectTitles.forEach(function(title) {
+        if (scrollDirection === 'up') {
+            // When scrolling down, set top to default for elements with id starting with 'projectTitle'
+            title.style.top = '10vw';
+            title.style.transform = 'none'; // Remove any previous transformations
+            title.style.transition = 'top 0.5s, transform 0.5s'; // Optional: add smooth transition
+        } else {
+            // When scrolling up, transform elements with id starting with 'projectTitle' upwards by 200%
+            title.style.top = ''; // Reset top property to allow natural flow
+            title.style.transition = 'top 0.5s, transform 0.5s'; // Optional: add smooth transition
+        }
+    });
+    
     
 
     // 获取iframe中background的高度更新sticky元素的top ////////////////////////////////////////////////////////////////////////////////////////////
 
-
-    var headerBackgroundHeight = iframeWindow.document.querySelector('.background').clientHeight;
-    var projectTitles = document.querySelectorAll('[id^="projectTitle"]');
-    projectTitles.forEach(function(title) {
-        title.style.top = headerBackgroundHeight + 'px';
-    });
 
 } 
 
