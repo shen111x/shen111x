@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0013ff" />
+    <meta name="theme-color" content="#ffffff" />
     <title>空白网页</title>
 
 
@@ -43,7 +43,8 @@
         [id^="projectTitle"] {
             position: sticky;
             top: 30vw;
-}
+         
+        }
 
 
 
@@ -57,24 +58,31 @@
 
 <!-- BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY -->
 <body>
-   <iframe src="pages/headerSec/headerSec.html" class="header" alt=" This Is Header !!!! "></iframe>
+   <iframe src="headerSec.html" class="header" alt=" This Is Header !!!! "></iframe>
    
    <div style="height:30vw;"></div>
+   <div style="height:90vh;">
+
+    <H3> This is Yichen's Portfolio Site, Studio Essiivi.</H3>
+
+
+
+
+   </div>
 
     <div>
-        <H2 id="projectTitle1"></h2>
-             <iframe src="pages/projectSec/1/index.html" alt=" This Is Project 1 !!!! "></iframe>
-
+        <H2 id="projectTitle1">Design Lab Sub Identity</h2>
+            <iframe src="pages/projectSec/1/index.html" alt=" This Is Project 1 !!!! "></iframe>
     </div>
 
     <div>
-        <H2 id="projectTitle2"></h2>
-            <iframe src="pages/projectSec/2/index.html" alt=" This Is Project 1 !!!! "></iframe>
+        <H2 id="projectTitle2">Place Is The Space Biennial</h2>
+            <iframe src="pages/projectSec/2/index.html" alt=" This Is Project 1 !!!! " load="lazy"></iframe>
     </div>
 
     <div>
         <H2 id="projectTitle3"></h2>
-            <iframe src="pages/projectSec/3/index.html" alt=" This Is Project 1 !!!! "></iframe>   
+            <iframe src="pages/projectSec/3/index.html" alt=" This Is Project 1 !!!! " load="lazy"></iframe>   
     </div>
 
     <div>
@@ -165,34 +173,6 @@
 <!-- BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY -->
 
 <script>
-
-
-
- // 自动获取文件夹内info.txt文件信息并且插入html中 ////////////////////////////////////////////////////////////////////////////////////////////
-
- function loadProjectInfo(projectNumber) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var info = xhr.responseText;
-            // Split by newline and get the first segment
-            var firstSegment = info.split('\n')[0];
-            // Set the content of <h2> to the first segment
-            document.getElementById('projectTitle' + projectNumber).innerText = firstSegment;
-        }
-    };
-    xhr.open('GET', 'projects/' + projectNumber + '/info.txt', true);
-    xhr.send();
-}
-
-// Call the function for each project when the page loads
-window.onload = function() {
-    for (var i = 1; i <= 14; i++) {
-        loadProjectInfo(i);
-    }
-};
-
-
 
    // 获取scroll信息判断往上还是往下发送信息去iframe ////////////////////////////////////////////////////////////////////////////////////////////
 

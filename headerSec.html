@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0013ff" />
+<meta name="theme-color" content="#ffffff" />
 <title>空白网页</title>
 
 <!-- CSS -->
@@ -19,7 +19,7 @@ body {
 
 @media screen and (max-width: 600px) {
     .background { 
-        background-color: #0013ff;
+        background-color: white;
         height:100%;
         width:100%;
         display: flex;
@@ -28,7 +28,7 @@ body {
     }
     .left { 
         height:100%;
-        background-color: #0013ff;
+        background-color: white;
         display: flex;
         align-items: center;
         transition: transform 0.3s ease; /* 添加过渡效果 */
@@ -36,7 +36,7 @@ body {
     .right { 
         width:23%;
         height:100%;
-        background-color: #0013ff;
+        background-color: white;
         display: inline;
     }
     .right-top {
@@ -50,7 +50,7 @@ body {
     h1 {
         font-size: 34vw;
         font-weight: 900;
-        color:white;
+        color:black;
         transition: transform 0.3s ease; /* 添加过渡效果 */
         transform: translateY(0%);
     }
@@ -69,7 +69,6 @@ body {
 }
 </style>
 </head>
-
 <!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY -->
 <body>
     <div class="background">
@@ -83,7 +82,6 @@ body {
     </div>
 </body>
 <!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY -->
-
 <!-- JavaScript -->
 <script>
 window.addEventListener('message', function(event) {
@@ -94,19 +92,14 @@ window.addEventListener('message', function(event) {
         var h1Element = document.querySelector('h1');
         var leftElement = document.querySelector('.left');
 
-        if (scrollDirection === 'down') {
-            // 回上面
+        if (scrollDirection === 'down') {// 回上面
             background.classList.remove("backgroundsmall");
             h1Element.classList.remove("h1small");
             leftElement.classList.remove("leftsmall");
-        } else {
-            // 去下面
+        } else {// 去下面
             background.classList.add("backgroundsmall");
             h1Element.classList.add("h1small");
-            leftElement.classList.add("leftsmall");
-        }
-    }
-});
+            leftElement.classList.add("leftsmall");}}});
 </script>
 <!-- JavaScript -->
 
