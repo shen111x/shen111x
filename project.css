@@ -1,4 +1,10 @@
 
+body{
+  width:100vw;
+  height:36vw;
+
+
+}
 
 
 body, html, div, iframe {
@@ -264,7 +270,7 @@ p u{
 
 
 
-                @media only screen and (max-width: 853px ) and (min-width: 600px) { 
+                @media only screen and (max-width: 900px ) and (min-width: 601px) { 
 
     
   

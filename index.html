@@ -36,8 +36,9 @@
 
             iframe {
                 border: 0;
-                width: 100%;
+                width: calc(100vw - 26px);
                 height: 180vw;
+                margin-left: 13px;
             }
 
             .header {
@@ -52,6 +53,8 @@
             [id^="projectTitle"] {
                 position: sticky;
                 top: 30vw;
+                font-size: 5.5vw;
+                margin-left: 13px;
             }
 
             .yichen {
@@ -65,7 +68,7 @@
             }
         }
 
-        @media screen and (min-width: 601px) {
+        @media screen and (min-width: 901px) {
             h2 {
                 font-size: 5.5vw;
                 font-weight: 900;
@@ -87,8 +90,9 @@
             iframe {
                 border: 0;
                 width: calc(100vw - 26px);
-                height: 80vh;
+                height: 40vw;
                 margin-left: 13px;
+                margin-bottom: 2vw;
             }
 
             .header {
@@ -116,6 +120,64 @@
                 display: none;
             }
         }
+
+
+
+        @media screen and (min-width: 601px) and (max-width:900px) {
+            h2 {
+                font-size: 5.5vw;
+                font-weight: 900;
+                margin-left: 13px;
+            }
+
+            h3 {
+                margin-left: 13px;
+            }
+
+            p {
+                margin-left: 13px;
+            }
+
+            .topMargin {
+                height: 20vw;
+            }
+
+            iframe {
+                border: 0;
+                width: calc(100vw - 26px);
+                height:40vw;
+                margin-left: 13px;
+                margin-bottom: 5vw;
+            }
+
+            .header {
+                background-color: none;
+                height: 10vw;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                z-index: 1000;
+            }
+
+            [id^="projectTitle"] {
+                font-size: 4vw;
+                margin-left: 13px;
+                
+            }
+
+            .yichen {
+                width: 20vw;
+                height: auto;
+                margin-left: 13px;
+            }
+
+            h5 {
+                display: none;
+            }
+
+
+          
+        }
     </style>
 </head>
 
@@ -127,7 +189,7 @@
     <div class="topMargin"></div>
     <div style="height:90vh;">
        <img src="yichenshen.jpg" class="yichen">
-       <h3>This is Yichen's Portfolio Site,<br>Studio Essiivi.<br><br>Featured Projects:<br><br><br>&nbsp;\/</h3>
+       <h3>This is Yichen's Portfolio Site,<br>Studio Essiivi.<br><br>
     </div>
  
     <div>
