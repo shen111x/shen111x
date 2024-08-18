@@ -47,7 +47,9 @@ body, html, div, iframe {
     <div class="gallery" onclick="restartInterval()">
       <div class="single"> <img src="images/1.jpeg" alt="Image 1"> </div>
       <div class="single"> <img src="images/2.jpeg" alt="Image 1"> </div>
-      <div class="single"> <img src="images/3.jpeg" loading="lazy" alt="Image 1"> </div>
+      <div class="single"> <img src="images/3.jpeg" alt="Image 1"> </div>
+      <div class="single"> <img src="images/4.jpeg" alt="Image 1"> </div>
+
     </div>
   </div>
 
@@ -58,7 +60,7 @@ body, html, div, iframe {
   </div> !-->
 
   <script>
-    let imageQuantity = 3;
+    let imageQuantity = 4;
     let scrollNeed = 0;
     let intervalId;
 
@@ -102,7 +104,7 @@ body, html, div, iframe {
     // 第一次启动额外添加的时间
     intervalId = setInterval(() => {
       nextSlide();
-    }, 1000);
+    }, 3000);
 
   </script>
 </body>
