@@ -1,0 +1,32 @@
+body, html, div, iframe {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family:Helvetica, sans-serif;
+  }
+  
+.container {
+        width: 100vw;
+        height: auto;
+        overflow-x: hidden;
+        position: relative;
+      }
+  
+.gallery {
+        width:100%;
+        
+      }
+  
+.single {
+        width: 100%;
+        height: auto;
+        display: inline;
+      }
+  
+img {
+        width: 100%;
+      }
+  
+.info {
+        margin-top: 10px;
+      }

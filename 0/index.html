@@ -4,56 +4,45 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="content-language" content="en-EN" />
 
-    <link rel="stylesheet" href="../project.css">
+    <link rel="stylesheet" href="../projectSetting/projectOverview.css">
 
 
   </head>
   <body>
+
     <div class="desktop_c0 mobile_c0">
       <div class="desktop_c1 mobile_c1">
-        <h2>Vie Mobile Blogging 
-        <br>Branding & UI/UX</h2>
+
+
+        <h2 id="tittleText" class="clickable" data-path="caseStudy.html"></h2>
         .<br>
-        <h6>
-          <br><br>Client: Vie App
-          <br><br>Delivery: Aug 2024
-          <br><br><br>
-          
-          “Vie” is designed to provide a 
-          user-friendly interface and visual system that allows users to create and customize blogs effortlessly. Users can integrate 
-          multiple media formats, such as text, 
-          images, and videos, into their posts and define how their blogs behave on mobile devices. The software ensures easy 
-          navigation, enabling users to enjoy the blogging process without stress while 
-          offering a comfortable environment to store and browse their posts.
 
-        <br>
-        <br>
-        This mobile blogging software empowers users to easily create and customize blogs directly from their smartphones. It supports multiple media formats, allowing users to integrate text, images, videos, and more into their posts. Additionally, users can define how their blogs behave on mobile devices, ensuring an optimized and personalized experience for their audience. This case study explores the design process and key features that make mobile blogging both flexible and user-friendly.
-      </h6>
 
-        <h5>
-          <u>Client:</u> Vie App / <u>Delivery:</u> Aug 2024 / 
-          “Vie” is designed to provide a 
-          user-friendly interface and visual system that allows users to create and customize blogs effortlessly. Users can integrate 
-          multiple media formats, such as text, 
-          images, and videos, into their posts and define how their blogs behave on mobile devices. The software ensures easy 
-          navigation, enabling users to enjoy the blogging process without stress while 
-          offering a comfortable environment to store and browse their posts.</h5>
+        <h6 id="desktopText">
+        </h6>
+
+
+        <h5 id="mobileText">
+        </h5>
       </div>
+
+
       <div class="desktop_c2 mobile_c2">
-        <iframe src="gallerySmall.html" class="desktop_gallerysmall mobile_gallerysmall"></iframe>
+
+        <iframe src="gallerySmall.html" class="desktop_gallerysmall mobile_gallerysmall clickable" data-path="caseStudy.html"></iframe>
         <h3>*concept</h3>
         .<br>
         <h6><br></h6>
-        <h5>
-          The concept I designed revolves around creating a seamless and intuitive blogging experience on mobile devices. It focuses on providing users with the flexibility to customize their blogs with various media formats while ensuring easy navigation and a stress-free interface. 
+
+        <h5 id="mobileConcept">
         </h5>
-        <h6>
-          The concept I designed revolves around creating a seamless and intuitive blogging experience on mobile devices. It focuses on providing users with the flexibility to customize their blogs with various media formats while ensuring easy navigation and a stress-free interface. 
+
+        <h6 id="desktopConcept">
         </h6>
+
       </div>
       <div class="desktop_c3 mobile_c3">
-        <iframe class="desktop_gallerybig mobile_gallerybig" src="galleryBig.html"></iframe>
+        <iframe src="galleryBig.html" class="desktop_gallerybig mobile_gallerybig clickable" data-path="caseStudy.html"></iframe>
       </div>
     </div>
   </body>
@@ -61,8 +50,103 @@
 
   <script>
 
-  
 
+
+//////////////监听点击，并且导航到detail page然后 更新detail page内iframe相应的路径 发送到detail page （detail page内需要接收器）/////////
+///////需在元素标签内添加  class="clickable" data-path="caseStudy.html" ///////////////
+document.addEventListener("DOMContentLoaded", function() {
+    // 为所有带有 clickable 类的元素添加点击事件监听器
+    document.querySelectorAll('.clickable').forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            event.stopPropagation(); // 阻止事件冒泡
+
+            const path = element.getAttribute('data-path');
+            console.log("Element clicked:", element);
+            console.log("Path:", path);
+
+            if (path) {
+                window.top.location.href = `../detail.html?path=${encodeURIComponent(path)}`;
+            }
+        });
+    });
+
+    // 为 iframe 元素单独添加事件监听器，确保点击事件被捕获
+    const galleryIframes = document.querySelectorAll('iframe.clickable');
+    galleryIframes.forEach(function(iframe) {
+        iframe.contentWindow.addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            event.stopPropagation(); // 阻止事件冒泡
+
+            const path = iframe.getAttribute('data-path');
+            console.log("Iframe clicked:", iframe);
+            console.log("Path:", path);
+
+            if (path) {
+                window.top.location.href = `../detail.html?path=${encodeURIComponent(path)}`;
+            }
+        });
+    });
+});
+
+
+//////////////////// 动态拾取并且插入文件夹内文本 ////////////////////////////////////
+    document.addEventListener("DOMContentLoaded", function() {
+    // 加载 tittleText.txt 内容
+    var xhrA = new XMLHttpRequest();
+    xhrA.open('GET', 'text/tittleText.txt', true);  // 修改路径，指向 text 文件夹
+    xhrA.onreadystatechange = function() {
+        if (xhrA.readyState === 4 && xhrA.status === 200) {
+            var contentA = xhrA.responseText;
+            document.getElementById('tittleText').innerHTML = contentA.replace(/\n/g, "<br>");
+        }
+    };
+    xhrA.send();
+
+    // 加载 mobileText.txt 内容
+    var xhrB = new XMLHttpRequest();
+    xhrB.open('GET', 'text/mobileText.txt', true);  // 修改路径，指向 text 文件夹
+    xhrB.onreadystatechange = function() {
+        if (xhrB.readyState === 4 && xhrB.status === 200) {
+            var contentB = xhrB.responseText;
+            document.getElementById('mobileText').innerHTML = contentB.replace(/\n/g, "<br>");
+        }
+    };
+    xhrB.send();
+
+    // 加载 desktopText.txt 内容
+    var xhrC = new XMLHttpRequest();
+    xhrC.open('GET', 'text/desktopText.txt', true);  // 修改路径，指向 text 文件夹
+    xhrC.onreadystatechange = function() {
+        if (xhrC.readyState === 4 && xhrC.status === 200) {
+            var contentC = xhrC.responseText;
+            document.getElementById('desktopText').innerHTML = contentC.replace(/\n/g, "<br>");
+        }
+    };
+    xhrC.send();
+
+    // 加载 mobileConcept.txt 内容
+    var xhrD = new XMLHttpRequest();
+    xhrD.open('GET', 'text/mobileConcept.txt', true);  // 修改路径，指向 text 文件夹
+    xhrD.onreadystatechange = function() {
+        if (xhrD.readyState === 4 && xhrD.status === 200) {
+            var contentD = xhrD.responseText;
+            document.getElementById('mobileConcept').innerHTML = contentD.replace(/\n/g, "<br>");
+        }
+    };
+    xhrD.send();
+
+    // 加载 desktopConcept.txt 内容
+    var xhrE = new XMLHttpRequest();
+    xhrE.open('GET', 'text/desktopConcept.txt', true);  // 修改路径，指向 text 文件夹
+    xhrE.onreadystatechange = function() {
+        if (xhrE.readyState === 4 && xhrE.status === 200) {
+            var contentE = xhrE.responseText;
+            document.getElementById('desktopConcept').innerHTML = contentE.replace(/\n/g, "<br>");
+        }
+    };
+    xhrE.send();
+});
 </script>
 
 </html>
