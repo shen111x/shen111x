@@ -1,1 +1,0 @@
-### Hiiiiiiiiiiii 👋 This is Yichen's Portfolio Site !!!!! This website is coded by myself. It has it's own micro CMS system. It's for my design portfolio use. No library used. Contact me if you are interested in the structure. sycombike@gmail.com

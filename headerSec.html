@@ -3,24 +3,28 @@
 <head>
 
     
-     <!-- Google Data Analytic tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PY3JWY980"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-       gtag('config', 'G-6PY3JWY980');
-     </script>
-     <!---------------------------------------->
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="theme-color" content="#ffffff" />
-     <title>HeaderSection</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PY3JWY980"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-6PY3JWY980');
+    </script>
 
-     <!-- Css Css Css Css Css Css Css Css Css -->
-      <style>
-      
-      body {
+
+
+
+   
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" />
+<title>空白网页</title>
+
+<!-- CSS -->
+<style>
+body {
     font-family: Helvetica, sans-serif;
     margin: 0;
     padding: 0;
@@ -72,10 +76,8 @@
     .navsub{
         width:19vw;
         height:10vw;
-        margin-right: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
+        float:right;
+        margin-right: 13px;
        
     }
 
@@ -208,13 +210,16 @@
         transform: translateX(-35%); /* 使用 translateX 调整位置 */
     }
 }
+
+
+
+
+
+
+
 </style>
 </head>
-
-
-
-
-<!-- Body Body Body Body Body Body Body Body -->
+<!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY -->
 <body>
     <div class="background">
         <div class="left">
@@ -228,17 +233,15 @@
     </div>
     <div class="nav">
         <div class="navblank"></div>
-        <div class="navsub"><p><a href="index.html" target="_parent" style="color:black; text-decoration: none;">Home</a></p></div>
-        <div class="navsub"><p><a href="works.html" target="_parent" style="color:black; text-decoration: none;">Works</a></p></div>
-        <div class="navsub"><p><a href="about.html" target="_parent" style="color:black; text-decoration: none;">About</a></p></div>
+        <div class="navsub"><p style="float: right; margin-right: 13px;padding:0;"><a href="index.html" target="_parent" style="color:black; text-decoration: none;"> </a></p></div>
+        <div class="navsub"><p style="float: right; margin-right: 13px;padding:0;"><a href="index.html" target="_parent" style="color:black; text-decoration: none;">Home</a></p></div>
+        <div class="navsub"><p style="float: right; margin-right: 13px;padding:0;"><a href="about.html" target="_parent" style="color:black; text-decoration: none;">About</a></p></div>
 
     </div>
 </body>
-
-
-
+<!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY --><!-- BODY -->
+<!-- JavaScript -->
 <script>
-    // 接收scroll信息 通过改变标签 产生动画 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 window.addEventListener('message', function(event) {
     var data = event.data;
     if (data.type === 'scroll') {
@@ -261,8 +264,7 @@ window.addEventListener('message', function(event) {
             nav.classList.add("navsmall");
             
             }}});
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 </script>
-
+<!-- JavaScript -->
 
 </html>
