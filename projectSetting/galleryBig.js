@@ -33,13 +33,13 @@ for (let i = 1; i <= 10; i++) { // 假设最多10张图片
                 element.autoplay = true; // 自动播放
                 element.style.width = '100%'; // 使视频宽度填满容器
                 //element.style.height = '100%'; // 使视频高度填满容器
-                //element.style.objectFit = 'cover'; // 保持比例并填充容器
+                //element.style.objectFit = 'contain'; // 保持比例并填充容器
             } else {
                 element = document.createElement('img');
                 element.src = imgPath;
                 element.style.width = '100%';
                 //element.style.height = '100%';
-                //element.style.objectFit = 'cover';
+                //element.style.objectFit = 'contain';
             }
 
             const div = document.createElement('div');

@@ -3,23 +3,19 @@
 <head>
 
     
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Data Analytic tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PY3JWY980"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-6PY3JWY980');
     </script>
-
-
-
-
-    <meta charset="UTF-8">
+    <!---------------------------------------->
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff" />
-    <title>Ess*</title>
+    <title>About</title>
 
 
 
@@ -40,12 +36,12 @@
         }
 
         H3 {
-            margin-left:13px;
+            margin-left:10px;
 
         } 
 
         p {
-            margin-left:13px;
+            margin-left:10px;
         }
 
         .topMargin{
@@ -374,12 +370,9 @@
 
 <script>
 
-   // 获取scroll信息判断往上还是往下发送信息去iframe ////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
+   // 获取scroll信息判断往上还是往下发送信息去iframe ///////////////////////////////////////////////////////////
     var prevScrollPos = window.pageYOffset;
-var scrollDirection
+    var scrollDirection
     window.onscroll = function() {
       var currentScrollPos = window.pageYOffset;
       var pageScrollX = window.pageXOffset;
@@ -405,31 +398,13 @@ var scrollDirection
     };
     var iframeWindow = document.querySelector('.header').contentWindow;
     iframeWindow.postMessage(message, '*');
-
-
-   // ------
-
-   var projectTitles = document.querySelectorAll('[id^="projectTitle"]');
-    projectTitles.forEach(function(title) {
-        if (scrollDirection === 'up') {
-            // When scrolling down, set top to default for elements with id starting with 'projectTitle'
-            title.style.top = '10vw';
-            title.style.transform = 'none'; // Remove any previous transformations
-            title.style.transition = 'top 0.5s, transform 0.5s'; // Optional: add smooth transition
-        } else {
-            // When scrolling up, transform elements with id starting with 'projectTitle' upwards by 200%
-            title.style.top = ''; // Reset top property to allow natural flow
-            title.style.transition = 'top 0.5s, transform 0.5s'; // Optional: add smooth transition
-        }
-    });
-    
-    
-
 } 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 </script>
+</body>
 
 
 </html>
