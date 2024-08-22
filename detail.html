@@ -59,6 +59,7 @@
 
      #caseStudyIframe{
         width:calc(100% - 20px);
+        height:auto;
         border: none;
         margin-left: 10px;
 
@@ -96,6 +97,7 @@
 
      #caseStudyIframe{
         width:80%;
+        height:auto;
         border: none;
         margin-left: 13px;
 
@@ -126,115 +128,104 @@
 
 
 
+    <script>
 
-<script>
-
-   // 获取scroll信息判断往上还是往下发送信息去iframe ///////////////////////////////////////////////////////////
-    var prevScrollPos = window.pageYOffset;
-    var scrollDirection
-    window.onscroll = function() {
-      var currentScrollPos = window.pageYOffset;
-      var pageScrollX = window.pageXOffset;
-      var maxScrollPos = Math.max(window.scrollMaxY || 0, document.body.scrollHeight - window.innerHeight);
-
-      // 添加限制条件
-      if ((currentScrollPos > 0 && currentScrollPos < maxScrollPos) && currentScrollPos !== pageScrollX) {
-        if (currentScrollPos === 0 || currentScrollPos === maxScrollPos) {
-            scrollDirection =  'down'  ; // 当滚动到顶部或底部时，默认显示
-        } else if (prevScrollPos > currentScrollPos) {
-            scrollDirection = 'down' ; // 向上滚动，显示 div
-        } else {
-            scrollDirection = 'up' ; // 向下滚动，隐藏 div
-        }
-      }
-
-      prevScrollPos = currentScrollPos;
-    
-
-    var message = {
-        type: 'scroll',
-        scrollDirection: scrollDirection,
-    };
-    var iframeWindow = document.querySelector('.header').contentWindow;
-    iframeWindow.postMessage(message, '*');
-} 
-//////////////////// 接收发自别处的点击 插入对应的路径从而更新iframe的src///////////////////////////////////////////////////   
-////////// 需要给iframe添加 id="caseStudyIframe" src="" ////////////////////////
-//// 一部分信息来自小文件夹，用referrer解析地址，另一部分来自根文件夹
-
-  // 获取URL中的查询参数
-  function getQueryParameter(name) {
+        // 获取scroll信息判断往上还是往下发送信息去iframe /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        var prevScrollPos = window.pageYOffset;
+        var scrollDirection;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            var pageScrollX = window.pageXOffset;
+            var maxScrollPos = Math.max(window.scrollMaxY || 0, document.body.scrollHeight - window.innerHeight);
+        
+            if ((currentScrollPos > 0 && currentScrollPos < maxScrollPos) && currentScrollPos !== pageScrollX) {
+                if (currentScrollPos === 0 || currentScrollPos === maxScrollPos) {
+                    scrollDirection = 'down'; // 当滚动到顶部或底部时，默认显示
+                } else if (prevScrollPos > currentScrollPos) {
+                    scrollDirection = 'down'; // 向上滚动，显示 div
+                } else {
+                    scrollDirection = 'up'; // 向下滚动，隐藏 div
+                }
+            }
+        
+            prevScrollPos = currentScrollPos;
+        
+            var message = {
+                type: 'scroll',
+                scrollDirection: scrollDirection,
+            };
+            var iframeWindow = document.querySelector('.header').contentWindow;
+            iframeWindow.postMessage(message, '*');
+        };
+        
+        // 获取URL中的查询参数 （动态更新casestudy iframe的src ）///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name);
         }
-
+        
         // 从referrer中提取文件夹路径
         function extractFolderFromReferrer(referrer) {
-            const referrerUrl = new URL(referrer);
-            const pathParts = referrerUrl.pathname.split('/');
-            // 返回文件夹部分（倒数第二个部分）
-            return pathParts[pathParts.length - 2] || '';
-        }
+    const referrerUrl = new URL(referrer);
+    const pathParts = referrerUrl.pathname.split('/');
+    if (pathParts.length >= 2) {
+        // 检查并返回文件夹路径
+        return pathParts.slice(-2, -1)[0];
+    }
+    return '';
+}
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const caseStudyFile = getQueryParameter('path');
-            if (!caseStudyFile) {
-                console.error("No path provided.");
-                return;
-            }
+document.addEventListener("DOMContentLoaded", function() {
+    const caseStudyFile = getQueryParameter('path');
+    if (!caseStudyFile) {
+        console.error("No path provided.");
+        return;
+    }
 
-            // 获取来源的referrer，并解析出文件夹路径
-            const referrer = document.referrer;
-            let folder = '';
+    const referrer = document.referrer;
+    let folder = '';
 
-            if (referrer) {
-                folder = extractFolderFromReferrer(referrer);
-            }
+    if (referrer) {
+        folder = extractFolderFromReferrer(referrer);
+    }
 
-            console.log("Referrer:", referrer);
-            console.log("Extracted Folder:", folder);
-            console.log("Case Study File:", caseStudyFile);
+    console.log("Referrer:", referrer);
+    console.log("Extracted Folder:", folder);
+    console.log("Case Study File:", caseStudyFile);
 
-            // 检查 folder 是否为空，若为空，则说明是在根目录下操作
-            let iframeSrc = '';
-            if (folder) {
-                iframeSrc = `${folder}/${caseStudyFile}`;
-            } else {
-                iframeSrc = caseStudyFile;
-            }
+    let iframeSrc = '';
+    if (folder) {
+        iframeSrc = `${folder}/${caseStudyFile}`;
+    } else {
+        iframeSrc = caseStudyFile;
+    }
 
-            document.getElementById('caseStudyIframe').src = iframeSrc;
-            console.log("Iframe Source:", iframeSrc);
-        });
+    console.log("Final Iframe Source:", iframeSrc);
 
+    const iframe = document.getElementById('caseStudyIframe');
+    iframe.src = iframeSrc;
 
-/////////////iframe onload触发检测 iframe内容的高度 动态更新 iframe的高度
-        // Resize iframe function
-        function resizeIframe(iframe) {
+    iframe.onload = function() {
+        setTimeout(function() {
+            resizeIframe(iframe);
+        }, 100);
+    };
+});
+//动态更新iframe的高度///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function resizeIframe(iframe) {
+    try {
+        if (iframe.contentDocument) {
             var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
             iframe.style.height = iframeDocument.body.scrollHeight + 'px';
+            console.log("Resized iframe to height: " + iframe.style.height);
+        } else {
+            console.error("Iframe contentDocument is null. Cannot resize iframe.");
         }
-
-        // Adjust iframe height on window resize
-        window.addEventListener('resize', function() {
-            var iframe = document.getElementById('caseStudyIframe');
-            resizeIframe(iframe);
-        });
-
-        // 页面加载完成后执行
-        document.addEventListener("DOMContentLoaded", function() {
-            var iframe = document.getElementById('caseStudyIframe');
-
-            // Initial resize after iframe load
-            iframe.onload = function() {
-                resizeIframe(iframe);
-            };
-
-            // Initial call after DOM content loaded
-            resizeIframe(iframe);
-        });
-////////////////////////////////////////////////////////////////////
-</script>
+    } catch (error) {
+        console.error("Error resizing iframe:", error); 
+    } 
+}
+        </script>
 
 </body>
 
