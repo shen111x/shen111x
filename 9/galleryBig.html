@@ -107,39 +107,6 @@ body, html, div, iframe {
       nextSlide();
     }, 1000);
 
-    document.addEventListener("DOMContentLoaded", function() {
-    const video = document.querySelector('video');
-    
-
-
-    
-    // 自动播放视频
-    if (video) {
-        video.play().catch(function(error) {
-            console.log("自动播放失败:", error);
-        });
-    }
-
-    // 检查视频是否被禁止
-    document.addEventListener('visibilitychange', function() {
-        if (document.visibilityState === 'visible' && video) {
-            video.play().catch(function(error) {
-                console.log("页面重新可见时自动播放失败:", error);
-            });
-        }
-    });
-});
-
-// 页面返回时重新播放视频
-window.addEventListener("pageshow", function(event) {
-    const video = document.querySelector('video');
-    if (event.persisted && video) { // 如果页面从缓存中加载
-        video.play().catch(function(error) {
-            console.log("缓存页面恢复时自动播放失败:", error);
-        });
-    }
-});
-
   </script>
 </body>
 </html>
