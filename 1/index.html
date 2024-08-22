@@ -11,39 +11,81 @@
   <body>
     <div class="desktop_c0 mobile_c0">
       <div class="desktop_c1 mobile_c1">
-        <h2>Design Lab<br>Logo & Identity</h2>
+        <h2 class="clickable" data-path="caseStudy.html">
+        Design Lab<br>Logo & Identity</h2>
         .
-        <h6>
-          <br><br> Client: Otis College of Art and Design
-          <br><br>Delivery: Oct 2023
-          <br><br><br>Otis Design Lab functions like an in-house design agency under Otis College of Art and Design. Design Lab prides itself on being the only design studio in Los Angeles that functions through a collaboration between students, staff, faculty, and external client partnerships.
-          <br><br>Design Lab wants student designers to build their skills and relationships as they collaborate on multidisciplinary projects, providing professional service to external clients at the same time.
+        <h6> <!-- 桌面本文字 ------------------------------------------------->
+          <br><br> 
+          Client: Otis College of Art and Design
+          <br><br>
+          Delivery: Oct 2023
+          <br><br><br>
+          Otis Design Lab functions like an in-house design agency under Otis College of Art and Design. Design Lab prides itself on being the only design studio in Los Angeles that functions through a collaboration between students, staff, faculty, and external client partnerships.
+          <br><br>
+          Design Lab wants student designers to build their skills and relationships as they collaborate on multidisciplinary projects, providing professional service to external clients at the same time.
         </h6>
-        <h5>
-          <u>Client:</u> Otis College of Art and Design / <u>Delivery:</u> Oct 2023 /
+        <h5> <!-- 手机版文字 ------------------------------------------------->
+          Client: Otis College of Art and Design / Delivery: Oct 2023 /
           Otis Design Lab functions like an in-house design agency under Otis College of Art and Design. Design Lab prides itself on being the only design studio in Los Angeles that functions through a collaboration between students, staff, faculty, and external client partnerships.
         </h5>
       </div>
       <div class="desktop_c2 mobile_c2">
-        <iframe src="gallerySmall.html" class="desktop_gallerysmall mobile_gallerysmall"></iframe>
+        <iframe src="gallerySmall.html" class="desktop_gallerysmall mobile_gallerysmall clickable" data-path="caseStudy.html"></iframe>
         <h3>*concept</h3>
         .<br>
         <h6><br></h6>
-        <h5>
+        <h5> <!-- 手机版 Concept ------------------------------------------------->
           Design was based on the brand core value, incorporated with Otis brand identity. It also shows external clients how our designers value “thinking” since we are thinkers. Additionally, it represents how Design Lab helped students prepare for their careers.
         </h5>
-        <h6>
+        <h6> <!-- 桌面版 Concept ------------------------------------------------->
           Design was based on the brand core value, incorporated with Otis brand identity. It also shows external clients how our designers value “thinking” since we are thinkers. Additionally, it represents how Design Lab helped students prepare for their careers.
         </h6>
       </div>
       <div class="desktop_c3 mobile_c3">
-        <iframe class="desktop_gallerybig mobile_gallerybig" src="galleryBig.html"></iframe>
+        <iframe class="desktop_gallerybig mobile_gallerybig clickable" data-path="caseStudy.html" src="galleryBig.html"></iframe>
       </div>
     </div>
   </body>
 
 
   <script>
+
+    //////////////监听点击，并且导航到detail page然后 更新detail page内iframe相应的路径 发送到detail page （detail page内需要接收器）/////////
+///////需在元素标签内添加  class="clickable" data-path="caseStudy.html" ///////////////
+document.addEventListener("DOMContentLoaded", function() {
+    // 为所有带有 clickable 类的元素添加点击事件监听器
+    document.querySelectorAll('.clickable').forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            event.stopPropagation(); // 阻止事件冒泡
+
+            const path = element.getAttribute('data-path');
+            console.log("Element clicked:", element);
+            console.log("Path:", path);
+
+            if (path) {
+                window.top.location.href = `../detail.html?path=${encodeURIComponent(path)}`;
+            }
+        });
+    });
+
+    // 为 iframe 元素单独添加事件监听器，确保点击事件被捕获
+    const galleryIframes = document.querySelectorAll('iframe.clickable');
+    galleryIframes.forEach(function(iframe) {
+        iframe.contentWindow.addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            event.stopPropagation(); // 阻止事件冒泡
+
+            const path = iframe.getAttribute('data-path');
+            console.log("Iframe clicked:", iframe);
+            console.log("Path:", path);
+
+            if (path) {
+                window.top.location.href = `../detail.html?path=${encodeURIComponent(path)}`;
+            }
+        });
+    });
+});
 
 </script>
 

@@ -11,12 +11,15 @@
   <body>
     <div class="desktop_c0 mobile_c0">
       <div class="desktop_c1 mobile_c1">
-        <h2>Vie Mobile Blogging 
+        <h2 class="clickable" data-path="caseStudy.html">
+          Vie Mobile Blogging 
         <br>Branding & UI/UX</h2>
         .<br>
-        <h6>
-          <br><br>Client: Vie App
-          <br><br>Delivery: Aug 2024
+        <h6> <!-- 桌面版 文字 ------------------------------------------------->
+          <br><br>
+          Client: Vie App
+          <br><br>
+          Delivery: Aug 2024
           <br><br><br>
           
           “Vie” is designed to provide a 
@@ -31,8 +34,9 @@
         This mobile blogging software empowers users to easily create and customize blogs directly from their smartphones. It supports multiple media formats, allowing users to integrate text, images, videos, and more into their posts. Additionally, users can define how their blogs behave on mobile devices, ensuring an optimized and personalized experience for their audience. This case study explores the design process and key features that make mobile blogging both flexible and user-friendly.
       </h6>
 
-        <h5>
-          <u>Client:</u> Vie App / <u>Delivery:</u> Aug 2024 / 
+        <h5> <!-- 手机版 文字 ------------------------------------------------->
+
+          Client: Vie App / Delivery: Aug 2024 / 
           “Vie” is designed to provide a 
           user-friendly interface and visual system that allows users to create and customize blogs effortlessly. Users can integrate 
           multiple media formats, such as text, 
@@ -41,26 +45,61 @@
           offering a comfortable environment to store and browse their posts.</h5>
       </div>
       <div class="desktop_c2 mobile_c2">
-        <iframe src="gallerySmall.html" class="desktop_gallerysmall mobile_gallerysmall"></iframe>
+        <iframe src="gallerySmall.html" class="desktop_gallerysmall mobile_gallerysmall clickable" data-path="caseStudy.html"></iframe>
         <h3>*concept</h3>
         .<br>
         <h6><br></h6>
-        <h5>
+        <h5> <!-- 手机版 Concept ------------------------------------------------->
           The concept I designed revolves around creating a seamless and intuitive blogging experience on mobile devices. It focuses on providing users with the flexibility to customize their blogs with various media formats while ensuring easy navigation and a stress-free interface. 
         </h5>
-        <h6>
+        <h6> <!-- 桌面版 Concept ------------------------------------------------->
           The concept I designed revolves around creating a seamless and intuitive blogging experience on mobile devices. It focuses on providing users with the flexibility to customize their blogs with various media formats while ensuring easy navigation and a stress-free interface. 
         </h6>
       </div>
       <div class="desktop_c3 mobile_c3">
-        <iframe class="desktop_gallerybig mobile_gallerybig" src="galleryBig.html"></iframe>
+        <iframe class="desktop_gallerybig mobile_gallerybig clickable" data-path="caseStudy.html" src="galleryBig.html"></iframe>
       </div>
     </div>
   </body>
 
 
   <script>
+ //////////////监听点击，并且导航到detail page然后 更新detail page内iframe相应的路径 发送到detail page （detail page内需要接收器）/////////
+///////需在元素标签内添加  class="clickable" data-path="caseStudy.html" ///////////////
+document.addEventListener("DOMContentLoaded", function() {
+    // 为所有带有 clickable 类的元素添加点击事件监听器
+    document.querySelectorAll('.clickable').forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            event.stopPropagation(); // 阻止事件冒泡
 
+            const path = element.getAttribute('data-path');
+            console.log("Element clicked:", element);
+            console.log("Path:", path);
+
+            if (path) {
+                window.top.location.href = `../detail.html?path=${encodeURIComponent(path)}`;
+            }
+        });
+    });
+
+    // 为 iframe 元素单独添加事件监听器，确保点击事件被捕获
+    const galleryIframes = document.querySelectorAll('iframe.clickable');
+    galleryIframes.forEach(function(iframe) {
+        iframe.contentWindow.addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            event.stopPropagation(); // 阻止事件冒泡
+
+            const path = iframe.getAttribute('data-path');
+            console.log("Iframe clicked:", iframe);
+            console.log("Path:", path);
+
+            if (path) {
+                window.top.location.href = `../detail.html?path=${encodeURIComponent(path)}`;
+            }
+        });
+    });
+});
   
 
 </script>

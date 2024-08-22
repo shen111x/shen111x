@@ -11,40 +11,80 @@
   <body>
     <div class="desktop_c0 mobile_c0">
       <div class="desktop_c1 mobile_c1">
-        <h2>A Separate Reality <br>Exhibition Motion Poster</h2>
+        <h2 class="clickable" data-path="caseStudy.html">
+        A Separate Reality <br>Exhibition Motion Poster</h2>
         .<br>
-        <h6>
-          <br><br>Client: Luna Anaïs Gallery
-          <br><br>Delivery: Oct 2023
-          <br><br><br>Luna Anaïs Gallery partners with Launch LA for a duo-solo show, curated by Gregory Rourke of Mystery Projects. Andrea Nakhla's futuristic humanoids and virtual reality challenge perception, while Gia Rush explores the city's zeitgeist, blending mythological elements with contemporary symbols.
-          <br><br>"A Separate Reality" unites their visions, offering a thought-provoking exploration of dichotomies. The exhibition runs until October 15, with an artist talk on October 8 at 5 PM and a closing event on October 15 from 1-8 PM. Find us at Launch LA, 170 South La Brea Avenue, Los Angeles, CA 90036. RSVP at director@lunaanais.com.
+        <h6> <!-- 桌面版 文字 ------------------------------------------------->
+          <br><br>
+          Client: Luna Anaïs Gallery
+          <br><br>
+          Delivery: Oct 2023
+          <br><br><br>
+          Luna Anaïs Gallery partners with Launch LA for a duo-solo show, curated by Gregory Rourke of Mystery Projects. Andrea Nakhla's futuristic humanoids and virtual reality challenge perception, while Gia Rush explores the city's zeitgeist, blending mythological elements with contemporary symbols.
+          <br><br>
+          "A Separate Reality" unites their visions, offering a thought-provoking exploration of dichotomies. The exhibition runs until October 15, with an artist talk on October 8 at 5 PM and a closing event on October 15 from 1-8 PM. Find us at Launch LA, 170 South La Brea Avenue, Los Angeles, CA 90036. RSVP at director@lunaanais.com.
         </h6>
-        <h5>
-          <u>Client:</u> Luna Anaïs Gallery / <u>Delivery:</u> Oct 2023 / 
+        <h5> <!-- 手机版 文字 ------------------------------------------------->
+          Client: Luna Anaïs Gallery / Delivery: Oct 2023 / 
           Luna Anaïs Gallery partners with Launch LA for a duo-solo show, curated by Gregory Rourke of Mystery Projects. Andrea Nakhla's futuristic humanoids and virtual reality challenge perception, while Gia Rush explores the city's zeitgeist, blending mythological elements with contemporary symbols.
         </h5>
       </div>
       <div class="desktop_c2 mobile_c2">
-        <iframe src="gallerySmall.html" class="desktop_gallerysmall mobile_gallerysmall"></iframe>
+        <iframe src="gallerySmall.html" class="desktop_gallerysmall mobile_gallerysmall clickable" data-path="caseStudy.html"></iframe>
         <h3>*concept</h3>
         .<br>
         <h6><br></h6>
-        <h5>
+        <h5> <!-- 手机版 Concept ------------------------------------------------->
           My focus gravitated towards the essence of "futuristic humanoids combined with virtual reality." In visually echoing participating artists, the poster directly recreates a "separated reality." Distorted font motion and dynamic background seamlessly integrating it as an integral part of the exhibition itself.
         </h5>
-        <h6>
+        <h6> <!-- 桌面版 Concept ------------------------------------------------->
           After thorough research on exhibiting artists, my focus gravitated towards the essence of "futuristic humanoids combined with virtual reality." In visually echoing participating artists, the poster directly recreates a "separated reality." Distorted font motion and dynamic background shifts elevate the poster's visual experience, seamlessly integrating it as an integral part of the exhibition itself.
         </h6>
       </div>
       <div class="desktop_c3 mobile_c3">
-        <iframe class="desktop_gallerybig mobile_gallerybig" src="galleryBig.html"></iframe>
+        <iframe class="desktop_gallerybig mobile_gallerybig clickable" data-path="caseStudy.html" src="galleryBig.html"></iframe>
       </div>
     </div>
   </body>
 
 
   <script>
+//////////////监听点击，并且导航到detail page然后 更新detail page内iframe相应的路径 发送到detail page （detail page内需要接收器）/////////
+///////需在元素标签内添加  class="clickable" data-path="caseStudy.html" ///////////////
+document.addEventListener("DOMContentLoaded", function() {
+    // 为所有带有 clickable 类的元素添加点击事件监听器
+    document.querySelectorAll('.clickable').forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            event.stopPropagation(); // 阻止事件冒泡
 
+            const path = element.getAttribute('data-path');
+            console.log("Element clicked:", element);
+            console.log("Path:", path);
+
+            if (path) {
+                window.top.location.href = `../detail.html?path=${encodeURIComponent(path)}`;
+            }
+        });
+    });
+
+    // 为 iframe 元素单独添加事件监听器，确保点击事件被捕获
+    const galleryIframes = document.querySelectorAll('iframe.clickable');
+    galleryIframes.forEach(function(iframe) {
+        iframe.contentWindow.addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            event.stopPropagation(); // 阻止事件冒泡
+
+            const path = iframe.getAttribute('data-path');
+            console.log("Iframe clicked:", iframe);
+            console.log("Path:", path);
+
+            if (path) {
+                window.top.location.href = `../detail.html?path=${encodeURIComponent(path)}`;
+            }
+        });
+    });
+});
   
 
 </script>
