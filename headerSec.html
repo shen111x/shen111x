@@ -35,7 +35,7 @@ body {
 
                                                    @media screen and (max-width: 600px) {
     .background { 
-        background-color: white;
+        background-color: rgb(255, 255, 255);
         height:100%;
         width:100%;
         display: flex;
@@ -52,9 +52,19 @@ body {
     }
     .right { 
         width:23%;
-        height:100%;
         background-color: transparent;
-        display: inline;
+        display:none;
+        transition: transform 0.3s ease; /* 添加过渡效果 */
+        transform: translateX(0%);
+
+    }
+
+    .rightsmall{
+        
+        display: flex;
+        align-items: center;
+        transform: translateX(-185%);
+        
     }
 
     .nav{ 
@@ -104,8 +114,11 @@ body {
     }
 
     h2 {
-        float: right;
-        margin-right: 13px;
+        font-size: 8.5vw;
+        font-weight: 900;
+        color:black;
+        transition: transform 0.3s ease; /* 添加过渡效果 */
+        transform: translateY(0%);
     }
 
     .h1small {
@@ -142,11 +155,22 @@ body {
         transition: transform 0.3s ease; /* 添加过渡效果 */
         transform: translateX(-0.5%);
     }
+
     .right { 
         width:23%;
-        height:100%;
-        background-color: white;
-        display: inline;
+        background-color: transparent;
+        display:none;
+        transition: transform 0.3s ease; /* 添加过渡效果 */
+        transform: translateX(0%);
+
+    }
+
+    .rightsmall{
+        
+        display: flex;
+        align-items: center;
+        transform: translateX(-65%);
+        
     }
 
     .nav{ 
@@ -196,8 +220,11 @@ body {
     }
 
     h2 {
-        float: right;
-        margin-right: 13px;
+        font-size: 2.8vw;
+        font-weight: 900;
+        color:black;
+        transition: transform 0.3s ease; /* 添加过渡效果 */
+        transform: translateY(0%);
     }
 
     .h1small {
@@ -225,10 +252,10 @@ body {
 <body>
     <div class="background">
         <div class="left">
-            <h1>Ess*</h1>
+            <h1>Ean</h1>
         </div>
         <div class="right">
-            <div class="right-top"></div>
+            <div class="right-top"><h2>Shen</h2></div>
             <div class="right-bottom"></div>
         </div>
         
@@ -252,11 +279,13 @@ window.addEventListener('message', function(event) {
         var h1Element = document.querySelector('h1');
         var leftElement = document.querySelector('.left');
         var nav = document.querySelector('.nav');
+        var rightElement = document.querySelector('.right');
 
         if (scrollDirection === 'down') {// 回上面
             background.classList.remove("backgroundsmall");
             h1Element.classList.remove("h1small");
             leftElement.classList.remove("leftsmall");
+            rightElement.classList.remove("rightsmall");
             nav.classList.remove("navsmall");
 
         } else {// 去下面
@@ -264,6 +293,7 @@ window.addEventListener('message', function(event) {
             h1Element.classList.add("h1small");
             leftElement.classList.add("leftsmall");
             nav.classList.add("navsmall");
+            rightElement.classList.add("rightsmall");
             
             }}});
 </script>
