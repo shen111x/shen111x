@@ -1,11 +1,10 @@
 
 
-Client: LACMA
+Client: Vie App
 
-Delivery: May 2023
+Delivery: Aug 2024
+         
+          
+“Vie” is designed to provide a user-friendly interface and visual system that allows users to create and customize blogs effortlessly. Users can integrate multiple media formats, such as text, images, and videos, into their posts and define how their blogs behave on mobile devices. The software ensures easy navigation, enabling users to enjoy the blogging process without stress while offering a comfortable environment to store and browse their posts.
 
-
-The Place is the Space Biennial celebrates 21st-century art, architecture, and design, exploring the intersection of land, art, and architecture. Through exhibitions, talks, and interventions, it inspires a new generation to reimagine architecture's role in society, fostering sustainability and modern dwelling.
-
-Originating from a collaboration of artists, writers, and activists addressing climate change, social inequality, and environmental degradation, The Place is the Space Biennial is a weekend-long extravaganza showcasing large-scale interventions challenging conventional ideas about space and place.
-      
+“Vie” emphasizes personalization and flexibility, allowing users to customize the appearance and layout of their blogs according to their preferences. With simple drag-and-drop functionality, users can easily rearrange their content and preview how it will look on different devices.
