@@ -51,38 +51,29 @@
 
 
   <script>
-//////////////监听点击，并且导航到detail page然后 更新detail page内iframe相应的路径 发送到detail page （detail page内需要接收器）/////////
-///////需在元素标签内添加  class="clickable" data-path="caseStudy.html" ///////////////
 document.addEventListener("DOMContentLoaded", function() {
-    // 为所有带有 clickable 类的元素添加点击事件监听器
+    // 为所有带有 .clickable 类的元素添加点击事件监听器
     document.querySelectorAll('.clickable').forEach(function(element) {
         element.addEventListener('click', function(event) {
             event.preventDefault();  // 阻止默认行为
             event.stopPropagation(); // 阻止事件冒泡
 
             const path = element.getAttribute('data-path');
-            console.log("Element clicked:", element);
-            console.log("Path:", path);
-
             if (path) {
-                window.top.location.href = `../detail.html?path=${encodeURIComponent(path)}`;
+                window.top.location.href = path;  // 在顶层页面跳转到目标页面
             }
         });
     });
 
-    // 为 iframe 元素单独添加事件监听器，确保点击事件被捕获
-    const galleryIframes = document.querySelectorAll('iframe.clickable');
-    galleryIframes.forEach(function(iframe) {
+    // 为 iframe 元素添加单独的事件监听器，确保点击事件被捕获
+    document.querySelectorAll('iframe.clickable').forEach(function(iframe) {
         iframe.contentWindow.addEventListener('click', function(event) {
             event.preventDefault();  // 阻止默认行为
             event.stopPropagation(); // 阻止事件冒泡
 
             const path = iframe.getAttribute('data-path');
-            console.log("Iframe clicked:", iframe);
-            console.log("Path:", path);
-
             if (path) {
-                window.top.location.href = `../detail.html?path=${encodeURIComponent(path)}`;
+                window.top.location.href = path;  // 在顶层页面跳转
             }
         });
     });

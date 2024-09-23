@@ -14,7 +14,9 @@ body, html, div, iframe {
   font-family:Helvetica, sans-serif;
 }
 
-
+.clickable{
+  cursor: pointer;
+}
 
 
                       @media only screen and (max-width: 600px) {
