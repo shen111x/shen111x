@@ -162,7 +162,13 @@
         </p>
     </div>
 
-    <div class="gallery"></div>
+    <div class="gallery">
+      <div class="single"> <video width="100%" height="100%" playsinline autoplay loop muted><source src="images/1.mp4" type="video/mp4">Your browser does not support the video tag.</video>  </div>
+      <div class="single"> <video width="100%" height="100%" playsinline autoplay loop muted><source src="images/2.mp4" type="video/mp4">Your browser does not support the video tag.</video>  </div>
+      <div class="single"> <video width="100%" height="100%" playsinline autoplay loop muted><source src="images/3.mp4" type="video/mp4">Your browser does not support the video tag.</video>  </div>
+      <div class="single"> <video width="100%" height="100%" playsinline autoplay loop muted><source src="images/4.mp4" type="video/mp4">Your browser does not support the video tag.</video>  </div>
+      <div class="single"> <video width="100%" height="100%" playsinline autoplay loop muted><source src="images/5.mp4" type="video/mp4">Your browser does not support the video tag.</video>  </div>
+    </div>
 
   </div>
     
@@ -201,71 +207,7 @@ var scrollDirection
     iframeWindow.postMessage(message, '*');
 
   }
-    // 动态加载图片内容
-    const imageFolder = './images/';
-    const galleryContainer = document.querySelector('.gallery');
-    const supportedFormats = ['jpeg', 'jpg', 'gif', 'mp4']; // 支持的文件类型
-    let imageQuantity = 0; // 图片数量
-
-    // 检查文件是否存在
-    function fileExists(url) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('HEAD', url, false);
-      xhr.send();
-      return xhr.status !== 404;
-    }
-
-    // 动态加载图片内容
-    function loadImages() {
-      let imagesLoaded = 0;
-
-      for (let i = 1; i <= 10; i++) { // 假设最多10张图片
-        supportedFormats.forEach(format => {
-          const imgPath = `${imageFolder}${i}.${format}`;
-          
-          if (fileExists(imgPath)) {
-            let element;
-            if (format === 'mp4') {
-              element = document.createElement('video');
-              element.src = imgPath;
-              element.loop = true;
-              element.muted = true;
-              element.autoplay = true;
-              element.style.width = '100%';
-            } else {
-              element = document.createElement('img');
-              element.src = imgPath;
-              element.style.width = '100%';
-            }
-
-            const div = document.createElement('div');
-            div.className = 'single';
-            div.appendChild(element);
-            galleryContainer.appendChild(div);
-            imageQuantity++;
-
-            element.onload = element.onloadeddata = function() {
-              imagesLoaded++;
-              if (imagesLoaded === imageQuantity) {
-                notifyParentToResizeIframe(); // 所有图片加载完成后调整iframe高度
-              }
-            };
-          }
-        });
-      }
-    }
-
-    // 通知父窗口调整 iframe 高度
-    function notifyParentToResizeIframe() {
-      if (window.parent && window.parent.resizeIframe) {
-        window.parent.resizeIframe(document.getElementById('caseStudyIframe'));
-      }
-    }
-
-    // 页面加载完成后执行
-    document.addEventListener("DOMContentLoaded", function() {
-      loadImages(); // 加载图片
-    });
+   
   </script>
 
 </body>
