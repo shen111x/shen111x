@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="en-EN" />
+
+    <link rel="stylesheet" href="../project.css">
+
+
+  </head>
+  <body>
+    <div class="desktop_c0 mobile_c0">
+      <div class="desktop_c1 mobile_c1">
+        <h2 class="clickable" data-path="caseStudy.html">
+          "Typography 3" <br>Book Fair Poster</h2>
+        .
+        <h6> <!-- 桌面版 文字 ------------------------------------------------->
+          <br><br> Client: Otis College of Art and Design
+          <br><br>Delivery: Jan 2023
+          <br><br><br>The Typography 3 project seamlessly integrates creativity and precision, highlighting advanced typographic techniques. The course cultivates a visually captivating design, embodying the transformative principles of Typography 3. As the semester concludes, all students are mandated to submit their books done in this class and participate in a school book fair. 
+          <br><br>The project wasn't overly challenging, yet I faced the task of designing, printing, and posting the poster from scratch within just one hour. Despite the time constraints, I am pleased with the excellent outcome achieved for the poster.
+        </h6>
+        <h5> <!-- 手机版 文字 ------------------------------------------------->
+          Client: Otis College of Art and Design / Delivery: Jan 2023 
+          The Typography 3 project seamlessly integrates creativity and precision, highlighting advanced typographic techniques. The course cultivates a visually captivating design, embodying the transformative principles of Typography 3. As the semester concludes, all students are mandated to submit their books done in this class and participate in a school book fair. 
+          </h5>
+      </div>
+      <div class="desktop_c2 mobile_c2">
+        <iframe src="gallerySmall.html" class="desktop_gallerysmall mobile_gallerysmall clickable" data-path="caseStudy.html"></iframe>
+        <h3>*concept</h3>
+        .<br>
+        <h6><br></h6>
+        <h5> <!-- 手机版 Concept ------------------------------------------------->
+          As the main focus of Typography 3 centered on typesetting, printing, and press-related aspects, my concept revolves around the printer's 'CMYK' four colors, creatively embodied in a 'set' form. This signifies both the multitude of books and the diverse design perspectives of each student.
+        </h5>
+        <h6> <!-- 桌面版 Concept ------------------------------------------------->
+          As the main focus of Typography 3 centered on typesetting, printing, and press-related aspects, my concept revolves around the printer's 'CMYK' four colors, creatively embodied in a 'set' form. This signifies both the multitude of books and the diverse design perspectives of each student.
+        </h6>
+      </div>
+      <div class="desktop_c3 mobile_c3">
+        <iframe class="desktop_gallerybig mobile_gallerybig clickable" data-path="caseStudy.html" src="galleryBig.html"></iframe>
+      </div>
+    </div>
+  </body>
+
+
+  <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    // 为所有带有 .clickable 类的元素添加点击事件监听器
+    document.querySelectorAll('.clickable').forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            event.stopPropagation(); // 阻止事件冒泡
+
+            const path = element.getAttribute('data-path');
+            if (path) {
+                window.top.location.href = path;  // 在顶层页面跳转到目标页面
+            }
+        });
+    });
+
+    // 为 iframe 元素添加单独的事件监听器，确保点击事件被捕获
+    document.querySelectorAll('iframe.clickable').forEach(function(iframe) {
+        iframe.contentWindow.addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            event.stopPropagation(); // 阻止事件冒泡
+
+            const path = iframe.getAttribute('data-path');
+            if (path) {
+                window.top.location.href = path;  // 在顶层页面跳转
+            }
+        });
+    });
+});
+
+</script>
+
+</html>
