@@ -45,15 +45,10 @@ body, html, div, iframe {
 <body>
   <div class="container" onscroll="updateInfo()" onclick="nextSlide()">
     <div class="gallery" onclick="restartInterval()">
-      
       <div class="single"> <img src="images/1.jpeg" alt="Image 1"> </div>
-      <div class="single"> <img src="images/2.jpeg" alt="Image 1"> </div>
-      <div class="single"> <video width="100%" height="100%" playsinline autoplay loop muted><source src="images/3.mp4" type="video/mp4">Your browser does not support the video tag.</video>  </div>
-      <div class="single"> <img src="images/4.jpeg" alt="Image 1"> </div>
-      <div class="single"> <img src="images/5.jpeg" alt="Image 1"> </div>
-      <div class="single"> <img src="images/6.jpeg" alt="Image 1"> </div>
-      <div class="single"> <img src="images/7.jpeg" alt="Image 1"> </div>
-      <div class="single"> <img src="images/8.jpeg" alt="Image 1"> </div>
+      <div class="single"> <img src="images/2.mp4" alt="Image 1"> </div>
+      <div class="single"> <img src="images/3.jpeg" loading="lazy" alt="Image 1"> </div>
+      <div class="single"> <img src="images/4.jpeg" loading="lazy" alt="Image 1"> </div>
 
     </div>
   </div>
@@ -65,7 +60,7 @@ body, html, div, iframe {
   </div> !-->
 
   <script>
-    let imageQuantity = 8;
+    let imageQuantity = 4;
     let scrollNeed = 0;
     let intervalId;
 
@@ -109,7 +104,7 @@ body, html, div, iframe {
     // 第一次启动额外添加的时间
     intervalId = setInterval(() => {
       nextSlide();
-    }, 3000);
+    }, 1000);
 
   </script>
 </body>
