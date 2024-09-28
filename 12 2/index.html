@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="en-EN" />
+
+    <link rel="stylesheet" href="../project.css">
+
+
+  </head>
+  <body>
+    <div class="desktop_c0 mobile_c0">
+      <div class="desktop_c1 mobile_c1">
+        <h2 class="clickable" data-path="caseStudy.html">
+           Apparel Graphic<br>T-Shirt Design</h2>
+        .
+        <h6> <!-- 桌面版 文字 ------------------------------------------------->
+          <br><br> 
+          Client: INAKA LA
+          <br><br>
+          Delivery: June 2024
+          <br><br><br>
+          Inaka is a dynamic sports and fitness brand, founded by Shawley Coker in 2018. It has made a significant impact in the activewear market by blending street culture with fitness. The brand is particularly known for its bold designs, featuring graphic prints on clothing such as shorts, t-shirts, and hoodies. Notable pieces include the “Inaka Ape” and “Moody Crewneck” with unique design elements.
+          <br><br>
+          In addition to apparel, Inaka Power offers fitness accessories such as lifting belts, wrist wraps, and knee sleeves, designed for both functionality and style. The brand also sells sports nutrition products, including pre-workout supplements formulated to enhance energy and workout performance 
+        </h6>
+        <h5> <!-- 手机版 文字 ------------------------------------------------->
+          Client: INAKA LA / Delivery: June 2024 
+          Inaka is a dynamic sports and fitness brand, founded by Shawley Coker in 2018. It has made a significant impact in the activewear market by blending street culture with fitness. The brand is particularly known for its bold designs, featuring graphic prints on clothing such as shorts, t-shirts, and hoodies. Notable pieces include the “Inaka Ape” and “Moody Crewneck” with unique design elements.
+          </h5>
+      </div>
+      <div class="desktop_c2 mobile_c2">
+        <iframe src="gallerySmall.html" class="desktop_gallerysmall mobile_gallerysmall clickable" data-path="caseStudy.html"></iframe>
+        <h3>*Category</h3>
+        .<br>
+        <h6><br></h6>
+
+        <h5><!-- 手机版 Concept ------------------------------------------------->
+          Apparel Graphic<br> 
+          T-Shirt Design<br>
+          Illustration<br>
+          Typography<br>
+          Custom Typeface<br>
+
+        </h5>
+        <h6> <!-- 桌面版 Concept ------------------------------------------------->
+          Apparel Graphic<br> 
+          T-Shirt Design<br>
+          Illustration<br>
+          Typography<br>
+          Custom Typeface<br>
+        </h6>
+      </div>
+      <div class="desktop_c3 mobile_c3">
+        <iframe class="desktop_gallerybig mobile_gallerybig clickable" data-path="caseStudy.html" src="galleryBig.html"></iframe>
+      </div>
+    </div>
+  </body>
+
+
+  <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    // 为所有带有 .clickable 类的元素添加点击事件监听器
+    document.querySelectorAll('.clickable').forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            event.stopPropagation(); // 阻止事件冒泡
+
+            const path = element.getAttribute('data-path');
+            if (path) {
+                window.top.location.href = path;  // 在顶层页面跳转到目标页面
+            }
+        });
+    });
+
+    // 为 iframe 元素添加单独的事件监听器，确保点击事件被捕获
+    document.querySelectorAll('iframe.clickable').forEach(function(iframe) {
+        iframe.contentWindow.addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            event.stopPropagation(); // 阻止事件冒泡
+
+            const path = iframe.getAttribute('data-path');
+            if (path) {
+                window.top.location.href = path;  // 在顶层页面跳转
+            }
+        });
+    });
+});
+
+</script>
+
+</html>
