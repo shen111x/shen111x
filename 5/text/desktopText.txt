@@ -1,10 +1,10 @@
 
 
-Client: Otis College of Art and Design
+Client: Vie App
 
-Delivery: Jan 2023
+Delivery: Aug 2024
+         
+          
+“Vie” is designed to provide a user-friendly interface and visual system that allows users to create and customize blogs effortlessly. Users can integrate multiple media formats, such as text, images, and videos, into their posts and define how their blogs behave on mobile devices. The software ensures easy navigation, enabling users to enjoy the blogging process without stress while offering a comfortable environment to store and browse their posts.
 
-
-The Typography 3 project seamlessly integrates creativity and precision, highlighting advanced typographic techniques. The course cultivates a visually captivating design, embodying the transformative principles of Typography 3. As the semester concludes, all students are mandated to submit their books done in this class and participate in a school book fair.
-
-The project wasn't overly challenging, yet I faced the task of designing, printing, and posting the poster from scratch within just one hour. Despite the time constraints, I am pleased with the excellent outcome achieved for the poster.
+“Vie” emphasizes personalization and flexibility, allowing users to customize the appearance and layout of their blogs according to their preferences. With simple drag-and-drop functionality, users can easily rearrange their content and preview how it will look on different devices.
