@@ -1,0 +1,24 @@
+{
+  "number": "1",
+  "title": "Design Lab\nLogo & Identity",
+  "year": "Oct 2023",
+  "client": "Otis College of Art and Design",
+  "description": "Otis Design Lab functions like an in-house design agency under Otis College of Art and Design. Design Lab prides itself on being the only design studio in Los Angeles that functions through a collaboration between students, staff, faculty, and external client partnerships.\n\nDesign Lab wants student designers to build their skills and relationships as they collaborate on multidisciplinary projects, providing professional service to external clients at the same time.",
+  "concept": "Design was based on the brand core value, incorporated with Otis brand identity. It also shows external clients how our designers value “thinking” since we are thinkers. Additionally, it represents how Design Lab helped students prepare for their careers.",
+  "categories": ["Logo Design", "Visual Identity", "Layout", "Typography", "Merchandise Design", "Concept Design"],
+  "cover": {"large": "images/1.jpeg", "small": "images/small/1.jpeg", "alt": "Design Lab logo and identity project cover"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "Design Lab identity preview 1"},
+    {"src": "images/small/2.jpeg", "alt": "Design Lab identity preview 2"},
+    {"src": "images/small/3.jpeg", "alt": "Design Lab identity preview 3"}
+  ],
+  "gallery": [
+    {"src": "images/1.jpeg", "alt": "Design Lab identity image 1"},
+    {"src": "images/2.gif", "alt": "Design Lab identity animation"},
+    {"src": "images/3.jpeg", "alt": "Design Lab identity image 3"},
+    {"src": "images/4.jpeg", "alt": "Design Lab identity image 4"},
+    {"src": "images/5.jpeg", "alt": "Design Lab identity image 5"},
+    {"src": "images/6.jpeg", "alt": "Design Lab identity image 6"},
+    {"src": "images/7.jpeg", "alt": "Design Lab identity image 7"}
+  ]
+}

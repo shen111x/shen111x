@@ -1,0 +1,12 @@
+.site-footer {
+  min-height: 24px;
+  padding: 10px var(--page-gutter);
+  color: #000;
+  background: #fff;
+  font-size: var(--body-text);
+  line-height: 1;
+}
+
+.site-footer p {
+  margin: 0;
+}

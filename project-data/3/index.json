@@ -1,0 +1,24 @@
+{
+  "number": "3",
+  "title": "Architectural Biennial\nTypographic Identity",
+  "year": "May 2023",
+  "client": "LACMA (School Project)",
+  "description": "The Place is the Space Biennial celebrates 21st-century art, architecture, and design, exploring the intersection of land, art, and architecture. Through exhibitions, talks, and interventions, it inspires a new generation to reimagine architecture's role in society, fostering sustainability and modern dwelling.\n\nOriginating from a collaboration of artists, writers, and activists addressing climate change, social inequality, and environmental degradation, The Place is the Space Biennial is a weekend-long extravaganza showcasing large-scale interventions challenging conventional ideas about space and place.",
+  "concept": "I reckon what defines a place is the different in-side space (interior) that is created by people. My concept explores the nuanced bond between space and human sociability, depicting diversity and unity through unique combinations of negative space and shapes.",
+  "categories": ["Visual Identity", "Font Design", "Motion Graphic", "Web Design", "Cross-Channel Campaign", "Catalog Design", "Ticket & Postcard"],
+  "cover": {"large": "images/1.gif", "small": "images/small/1.jpeg", "alt": "Architectural Biennial typographic identity cover"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "Architectural Biennial preview 1"},
+    {"src": "images/small/2.jpeg", "alt": "Architectural Biennial preview 2"},
+    {"src": "images/small/3.jpeg", "alt": "Architectural Biennial preview 3"}
+  ],
+  "gallery": [
+    {"src": "images/1.gif", "alt": "Architectural Biennial animation"},
+    {"src": "images/2.jpeg", "alt": "Architectural Biennial image 2"},
+    {"src": "images/3.jpeg", "alt": "Architectural Biennial image 3"},
+    {"src": "images/4.jpeg", "alt": "Architectural Biennial image 4"},
+    {"src": "images/5.jpg", "alt": "Architectural Biennial image 5"},
+    {"src": "images/6.jpeg", "alt": "Architectural Biennial image 6"},
+    {"src": "images/7.jpeg", "alt": "Architectural Biennial image 7"}
+  ]
+}

@@ -1,374 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3EE%3C/text%3E%3C/svg%3E">
+  <title>Ean's Portfolio</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PY3JWY980"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6PY3JWY980');
+  </script>
+  <link rel="stylesheet" href="/css/universal.css?v=20260806">
+  <link rel="stylesheet" href="/components/project-card/style.css">
+  <link rel="stylesheet" href="/components/footer/style.css?v=20260806">
+  <style>
+    .home-hero {
+      padding: calc(var(--header-expanded-height) + (10 * var(--page-gutter))) var(--page-gutter) 0;
+    }
 
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PY3JWY980"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-6PY3JWY980');
-    </script>
+    .home-hero__graphic {
+      display: block;
+      width: min(48vw, 400px);
+      height: auto;
+    }
 
+    .home-hero__details,
+    .home-hero__cta {
+      margin: calc(4 * var(--page-gutter)) 0 0;
+      line-height: 1.2;
+    }
 
+    .home-hero__details-muted {
+      color: rgb(0 0 0 / var(--category-opacity));
+    }
 
+    .home-hero__cta a {
+      text-underline-offset: 3px;
+    }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ffffff" />
-    <title>Ean's Portfolio</title>
+    .home-projects-divider {
+      margin: calc(8 * var(--page-gutter)) var(--page-gutter);
+      line-height: 1;
+    }
 
-    <style>
-        body {
-            font-family: Helvetica, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: auto;
-            width: 100%;
-        }
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+      padding: 0 var(--page-gutter);
+      padding-bottom: 100px;
+    }
 
-        h5{
-            margin-top:0px;
-            margin-bottom:0px;
-        }
-
-        h6{
-            margin-top:4vw;
-            margin-bottom:4vw;
-        }
-
-        .header {
-            background-color: none; 
-
-        }
-
-        
-
-
-        @media screen and (max-width: 600px) {
-            h2 {
-                font-size: 5.5vw;
-                font-weight: 900;
-                margin-left: 10px;
-            }
-
-            h3 {
-                margin-left: 10px;
-            }
-
-            p {
-                margin-left: 10px;
-            }
-
-            .topMargin {
-                height: 47.5vw;
-            }
-
-            iframe {
-                border: 0;
-                width: calc(100vw - 20px);
-                height: 190vw;
-                margin-left: 10px;
-            }
-
-            .header {
-
-                height: 30vw;
-                width: 100%;
-                position: fixed;
-                top: 0;
-                z-index: 1000;
-            }
-
-
-            .yichen {
-                width: 60%;
-                height: auto;
-                margin-left: 10px;
-                display:block;
-            }
-
-        
-        }
-
-        @media screen and (min-width: 901px) {
-            h2 {
-                font-size: 5.5vw;
-                font-weight: 900;
-                margin-left: 13px;
-            }
-
-            h3 {
-                margin-left: 13px;
-            }
-
-            p {
-                margin-left: 13px;
-            }
-
-            .topMargin {
-                height: 20vw;
-            }
-
-            iframe {
-                border: 0;
-                width: calc(100vw - 26px);
-                height: 40vw;
-                margin-left: 13px;
-                margin-bottom: 2vw;
-            }
-
-            .header {
-                height: 10vw;
-                width: 100%;
-                position: fixed;
-                top: 0;
-                z-index: 1000;
-            }
-
-            .yichen {
-                width: 20vw;
-                height: auto;
-                margin-left: 13px;
-                display:block;
-            }
-
-           
-        }
-
-
-
-        @media screen and (min-width: 601px) and (max-width:900px) {
-            h2 {
-                font-size: 5.5vw;
-                font-weight: 900;
-                margin-left: 13px;
-            }
-
-            h3 {
-                margin-left: 13px;
-            }
-
-            p {
-                margin-left: 13px;
-            }
-
-            .topMargin {
-                height: 20vw;
-            }
-
-            iframe {
-                border: 0;
-                width: calc(100vw - 26px);
-                height:40vw;
-                margin-left: 13px;
-                margin-bottom: 5vw;
-            }
-
-            .header {
-                height: 10vw;
-                width: 100%;
-                position: fixed;
-                top: 0;
-                z-index: 1000;
-            }
-
-            [id^="projectTitle"] {
-                font-size: 4vw;
-                margin-left: 13px;
-                
-            }
-
-            .yichen {
-                width: 20vw;
-                height: auto;
-                margin-left: 13px;
-                display:block;
-            }
-
-           
-
-
-          
-        }
-    </style>
+    @media (max-width: 600px) {
+      .home-hero__graphic { width: 82vw; }
+    }
+  </style>
 </head>
+<body class="home-page">
+  <iframe class="header-iframe" src="/components/header/index.html" title="Site header"></iframe>
 
- <!-- BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY \/ \/ \/-->
+  <main>
+    <section class="home-hero" aria-label="Introduction">
+      <img
+        class="home-hero__graphic"
+        src="/images/hero.svg"
+        alt="Branding, Visual Identity, Typography, Cross-Channel Campaign, User Experience and UI, Motion Graphics, Design System, Blender 3D, Print Production, Front-End"
+      >
 
-<body>
-    <iframe src="headerSec.html" class="header" style="margin-left: 0px;" alt="This Is Header !!!!"></iframe>
-    
-    <div class="topMargin"></div>
-    <div style="height:85vh;">
+      <p class="home-hero__details">
+        For Consumer &amp; B2B Brands<br>
+        Across: CPG, SaaS, E-commerce<br>
+        All stages: 0-1, Rebrand &amp; Systemization<br>
+        <span class="home-hero__details-muted">C2C contracts ONLY</span>
+      </p>
 
+      <p class="home-hero__cta">
+        <a href="#project-1">See Projects</a>
+      </p>
+    </section>
 
-       <!-- <img src="yichenshen.jpg" class="yichen" onclick="window.location.href='/about.html';"> 
-       <img src="hero.jpg" class="yichen" style="margin-top: 18vh; transform: scale(1.3); transform-origin:left;">-->
+    <div class="home-projects-divider" aria-hidden="true">+</div>
 
-       <p style="line-height: 1.5"> 
-        <b>Area of Expertise *</b><br>
-        <br>
-        
-        Brand Identity<br>
-        Cross-Channel Campaign<br>
-        Marketing Design<br>
-        Motion Graphic<br>
-        Branded Merchandise<br>
-        UI&UX<br>
-        Web Design<br>
-        3D, AR<br>
-        Html, Css, Java Script</p>
+    <section class="project-list" aria-label="Featured projects">
+      <div project-number="1"></div>
+      <div project-number="2"></div>
+      <div project-number="3"></div>
+      <div project-number="4"></div>
+      <div project-number="5"></div>
+      <div project-number="6"></div>
+      <div project-number="7"></div>
+      <div project-number="8"></div>
+      <div project-number="9"></div>
+      <div project-number="10"></div>
+      <div project-number="11"></div>
+    </section>
+  </main>
 
-
-
-       <p style="line-height: 1.5; margin-top: 40px;"> 
-        <b>Featured Projects *</b><br>
-        <br>
-        (Click on a name to jump)<br>
-
-        <a href="javascript:void(0)" onclick="scrollToIframe(1)"  style="color:black;">01 Otis Design Lab Logo & Brand Identity</a><br>
-        <a href="javascript:void(0)" onclick="scrollToIframe(2)"  style="color:black;">02 Fashion Brand Identity</a><br>
-        <a href="javascript:void(0)" onclick="scrollToIframe(3)"  style="color:black;">03 Biennial Typographic Identity</a><br>
-        <a href="javascript:void(0)" onclick="scrollToIframe(4)"  style="color:black;">04 APP Brand Identity & UI/UX</a><br>
-        <a href="javascript:void(0)" onclick="scrollToIframe(5)"  style="color:black;">05 LAist Radio Gala 2024 Email Campaign</a><br>
-        <a href="javascript:void(0)" onclick="scrollToIframe(6)"  style="color:black;">06 Apparel Graphic T-Shirt Design</a><br>
-        <a href="javascript:void(0)" onclick="scrollToIframe(7)"  style="color:black;">07 Exhibition Motion Poster</a><br>
-        <a href="javascript:void(0)" onclick="scrollToIframe(8)"  style="color:black;">08 Photography Book Design</a><br>
-        <a href="javascript:void(0)" onclick="scrollToIframe(9)"  style="color:black;">09 Adobe Event Pre-press & Production</a><br>
-        <a href="javascript:void(0)" onclick="scrollToIframe(10)" style="color:black;">10 Big Sunday NPO Brand Identity</a><br>
-        <a href="javascript:void(0)" onclick="scrollToIframe(11)" style="color:black;">11 Exhibition 3D Rendering</a><br>
-       <!--  <a href="javascript:void(0)" onclick="scrollToIframe(12)" style="color:black;">12 </a><br> --> 
-    </p>
-       <!-- <h3>This is Ean's Portfolio Site,<br>Studio Ess*<br><br> 12 featured projects <br> scroll down -->
-    </div>
-
-    
-
- 
-    <div>
-       <iframe src="1/index.html" alt="This Is Project 1 !!!!"></iframe>
-    </div>
- 
-    <div>
-       <iframe src="2/index.html" alt="This Is Project 2 !!!! " load="lazy"></iframe>
-    </div>
- 
-    <div>
-       <iframe src="3/index.html" alt="This Is Project 3 !!!! " load="lazy"></iframe>   
-    </div>
- 
-    <div>
-       <iframe src="4/index.html" alt="This Is Project 4 !!!! " load="lazy"></iframe>   
-    </div>
- 
-    <div>
-       <iframe src="5/index.html" alt="This Is Project 5 !!!! " load="lazy"></iframe>
-    </div>
- 
-    <div>
-       <iframe src="6/index.html" alt="This Is Project 6 !!!! " load="lazy"></iframe>
-    </div>
- 
-    <div>
-       <iframe src="7/index.html" alt="This Is Project 7 !!!! " load="lazy"></iframe>
-    </div>
- 
-    <div>
-       <iframe src="8/index.html" alt="This Is Project 8 !!!! " load="lazy"></iframe>
-    </div>
- 
-    <div>
-       <iframe src="9/index.html" alt="This Is Project 9 !!!! " load="lazy"></iframe>
-    </div>
- 
-    <div>
-       <iframe src="10/index.html" alt="This Is Project 10 !!!! " load="lazy"></iframe>
-    </div>
- 
-    <div>
-        <iframe src="11/index.html" alt="This Is Project 11 !!!! " load="lazy"></iframe>
-     </div>
-
- <!---
- <div>
-     <h5 id="projectTitle12">Kogi Food Truck <br>Illustrative Figure</h5>
-     <h6 id="projectTitle12">Kogi Food Truck Illustrative Figure </h6>
-     <iframe src="12/index.html" alt="This Is Project 12 !!!! " style="margin-left:13px;" load="lazy"></iframe>
- </div>
- 
- <div>
-     <h5 id="projectTitle13">Kogi Food Truck </h5>
-     <h6 id="projectTitle13">Kogi Food Truck</h6>
-     <iframe src="13/index.html" alt="This Is Project 13 !!!! " style="margin-left:13px;" load="lazy"></iframe>
- </div>
- -->
- 
- </body>
- <!-- BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY  BODY /\ /\ /\-->
-
- 
-<script>
-    function scrollToIframe(index) {
-    // 获取所有 iframe
-    var iframes = document.querySelectorAll('iframe');
-    
-    // 确保要滚动的 iframe 存在
-    if (iframes[index]) {
-        // 计算 iframe 到页面顶部的距离
-        var iframeTop = iframes[index].offsetTop;
-
-        // 使用 window.scrollTo 实现平滑滚动
-        window.scrollTo({
-            top: iframeTop - 75,  // 这里的 100 是为了让 iframe 不被头部遮挡，可以根据需要调整
-            behavior: 'smooth'
-        });
-    }
-}
-    ////////////////////////////////////////////////////////////////
-    var prevScrollPos = window.pageYOffset;
-    var scrollDirection;
-
-    window.onscroll = function() {
-        var currentScrollPos = window.pageYOffset;
-        var pageScrollX = window.pageXOffset;
-        var maxScrollPos = Math.max(window.scrollMaxY || 0, document.body.scrollHeight - window.innerHeight);
-
-        if ((currentScrollPos > 0 && currentScrollPos < maxScrollPos) && currentScrollPos !== pageScrollX) {
-            if (currentScrollPos === 0 || currentScrollPos === maxScrollPos) {
-                scrollDirection = 'down';
-            } else if (prevScrollPos > currentScrollPos) {
-                scrollDirection = 'down';
-            } else {
-                scrollDirection = 'up';
-            }
-        }
-
-        prevScrollPos = currentScrollPos;
-
-        var message = {
-            type: 'scroll',
-            scrollDirection: scrollDirection,
-        };
-        var iframeWindow = document.querySelector('.header').contentWindow;
-        iframeWindow.postMessage(message, '*');
-
-        var projectTitles = document.querySelectorAll('[id^="projectTitle"]');
-        projectTitles.forEach(function(title) {
-            if (scrollDirection === 'up') {
-                title.style.top = '10vw';
-                title.style.transform = 'none';
-                title.style.transition = 'top 0.5s, transform 0.5s';
-            } else {
-                title.style.top = '';
-                title.style.transition = 'top 0.5s, transform 0.5s';
-            }
-        });
-    }
-</script>
-
+  <div id="footer-container"></div>
+  <script src="/js/universal.js"></script>
+  <script src="/components/project-card/script.js"></script>
+  <script src="/components/footer/script.js?v=20260806"></script>
 </body>
 </html>

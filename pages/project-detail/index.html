@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3EE%3C/text%3E%3C/svg%3E">
+  <title>Project — Ean Shen</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PY3JWY980"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6PY3JWY980');
+  </script>
+  <link rel="stylesheet" href="/css/universal.css?v=20260806">
+  <link rel="stylesheet" href="/components/footer/style.css?v=20260806">
+  <style>
+    .project-detail { width: 61.8vw; margin: 0 0 0 13px; padding-top: 35vh; }
+    .project-detail__text { width: 100%; max-width: 600px; }
+    .project-detail h1 { margin: 0; }
+    .project-detail h2 { margin: 2rem 0; }
+    .project-detail p { margin: 2rem 0 0; }
+    .project-detail__categories { margin: 1rem 0 0; padding: 0; list-style: none; }
+    .project-detail__gallery { margin-top: 50px; }
+    .project-detail__gallery img,
+    .project-detail__gallery video {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 13px;
+      object-fit: contain;
+    }
+    .project-detail .page-loading, .project-detail .page-error { margin: 0; }
+    @media (max-width: 600px) {
+      .project-detail { width: calc(100vw - 20px); margin-left: 10px; }
+      .project-detail__gallery img, .project-detail__gallery video { margin-bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <iframe class="header-iframe" src="/components/header/index.html" title="Site header"></iframe>
+  <main id="project-detail" class="project-detail" aria-live="polite">
+    <p class="page-loading">Loading project…</p>
+  </main>
+  <div id="footer-container"></div>
+  <script src="/js/universal.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var container = document.getElementById('project-detail');
+      var projectNumber = new URLSearchParams(window.location.search).get('project');
+
+      if (!projectNumber) {
+        showError('No project was selected.');
+        return;
+      }
+
+      fetch(window.site.projectDataUrl(projectNumber))
+        .then(function (response) {
+          if (!response.ok) throw new Error('Project request failed: ' + response.status);
+          return response.json();
+        })
+        .then(renderProject)
+        .catch(function (error) {
+          console.error(error);
+          showError('This project could not be loaded.');
+        });
+
+      function renderProject(project) {
+        document.title = project.title.replace(/\n/g, ' ') + ' — Ean Shen';
+        container.innerHTML = '';
+
+        var text = document.createElement('section');
+        text.className = 'project-detail__text';
+        text.innerHTML = '<h1>' + window.site.escapeHtml(project.title).replace(/\n/g, '<br>') + '</h1>' +
+          '<p>' + window.site.escapeHtml(project.description) + '</p>' +
+          (project.concept ? '<h2>*concept:</h2><p>' + window.site.escapeHtml(project.concept) + '</p>' : '');
+        container.appendChild(text);
+
+        var gallery = document.createElement('section');
+        gallery.className = 'project-detail__gallery';
+        gallery.setAttribute('aria-label', project.title.replace(/\n/g, ' ') + ' gallery');
+        (project.gallery || []).forEach(function (media, index) {
+          var isVideo = media.type === 'video' || /\.mp4$/i.test(media.src);
+          var node = document.createElement(isVideo ? 'video' : 'img');
+          node.src = window.site.projectAssetUrl(project.number, media.src);
+          if (isVideo) {
+            node.autoplay = true;
+            node.loop = true;
+            node.muted = true;
+            node.playsInline = true;
+            node.setAttribute('aria-label', media.alt || project.title + ' video ' + (index + 1));
+          } else {
+            node.alt = media.alt || project.title + ' image ' + (index + 1);
+            node.loading = index ? 'lazy' : 'eager';
+          }
+          gallery.appendChild(node);
+        });
+        container.appendChild(gallery);
+      }
+
+      function showError(message) {
+        container.innerHTML = '<p class="page-error">' + window.site.escapeHtml(message) + ' <a href="/">Return home</a>.</p>';
+      }
+    }());
+  </script>
+  <script src="/components/footer/script.js?v=20260806"></script>
+</body>
+</html>

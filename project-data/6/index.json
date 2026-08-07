@@ -1,0 +1,21 @@
+{
+  "number": "6",
+  "title": "Apparel Graphic\nT-Shirt Design",
+  "year": "June 2024",
+  "client": "INAKA LA (Test)",
+  "description": "Inaka is a dynamic sports and fitness brand, founded by Shawley Coker in 2018. It has made a significant impact in the activewear market by blending street culture with fitness. The brand is particularly known for its bold designs, featuring graphic prints on clothing such as shorts, t-shirts, and hoodies. Notable pieces include the “Inaka Ape” and “Moody Crewneck” with unique design elements.\n\nIn addition to apparel, Inaka Power offers fitness accessories such as lifting belts, wrist wraps, and knee sleeves, designed for both functionality and style. The brand also sells sports nutrition products, including pre-workout supplements formulated to enhance energy and workout performance.",
+  "concept": "An apparel graphic test exploring custom typography, illustration, and the visual overlap between street culture and fitness.",
+  "categories": ["Apparel Graphic", "T-Shirt Design", "Illustration", "Typography", "Custom Typeface"],
+  "cover": {"large": "images/1.jpeg", "small": "images/small/1.jpeg", "alt": "Apparel graphic T-shirt project cover"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "Apparel graphic preview 1"},
+    {"src": "images/small/2.jpeg", "alt": "Apparel graphic preview 2"},
+    {"src": "images/small/3.jpeg", "alt": "Apparel graphic preview 3"}
+  ],
+  "gallery": [
+    {"src": "images/1.jpeg", "alt": "Apparel graphic image 1"},
+    {"src": "images/2.jpeg", "alt": "Apparel graphic image 2"},
+    {"src": "images/3.jpeg", "alt": "Apparel graphic image 3"},
+    {"src": "images/4.jpeg", "alt": "Apparel graphic image 4"}
+  ]
+}

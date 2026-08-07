@@ -1,0 +1,19 @@
+{
+  "number": "7",
+  "title": "A Separate Reality\nExhibition Motion Poster",
+  "year": "Oct 2023",
+  "client": "Luna Anaïs Gallery",
+  "description": "Luna Anaïs Gallery partners with Launch LA for a duo-solo show, curated by Gregory Rourke of Mystery Projects. Andrea Nakhla's futuristic humanoids and virtual reality challenge perception, while Gia Rush explores the city's zeitgeist, blending mythological elements with contemporary symbols.\n\nA Separate Reality unites their visions, offering a thought-provoking exploration of dichotomies. The exhibition runs until October 15, with an artist talk on October 8 at 5 PM and a closing event on October 15 from 1-8 PM.",
+  "concept": "After thorough research on exhibiting artists, my focus gravitated towards the essence of futuristic humanoids combined with virtual reality. In visually echoing participating artists, the poster directly recreates a separated reality. Distorted font motion and dynamic background shifts elevate the poster's visual experience, seamlessly integrating it as an integral part of the exhibition itself.",
+  "categories": ["Motion Graphic", "Poster Design"],
+  "cover": {"large": "images/2.jpeg", "small": "images/small/1.jpeg", "alt": "A Separate Reality motion poster cover"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "A Separate Reality preview 1"},
+    {"src": "images/small/2.jpeg", "alt": "A Separate Reality preview 2"},
+    {"src": "images/small/3.jpeg", "alt": "A Separate Reality preview 3"}
+  ],
+  "gallery": [
+    {"src": "images/1.mp4", "type": "video", "alt": "A Separate Reality motion poster"},
+    {"src": "images/2.jpeg", "alt": "A Separate Reality poster image"}
+  ]
+}

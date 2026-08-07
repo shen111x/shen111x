@@ -1,0 +1,23 @@
+{
+  "number": "9",
+  "title": "Adobe Max & Summit\nProduction & Pre-press",
+  "year": "Oct 2023 - Present",
+  "client": "Adobe, The Fittest",
+  "description": "At Adobe Max, I supported the on-site print production for Adobe’s AI Generative brand activation. My role involved preparing digital files for different media of event materials, coordinating with vendors to ensure seamless printing, and overseeing the quality of printed assets. This ensured high-impact visuals that aligned with the event’s theme, delivering a cohesive and engaging experience for attendees while highlighting Adobe’s innovative AI tools.\n\nThe Adobe AI Generative booth at Adobe Max featured an immersive brand activation centered around on-site print production. Visuals created using Adobe’s AI tools were produced live, offering attendees an interactive experience.",
+  "concept": "1: Adobe Max 2023 Los Angeles\n2: Adobe Summit 2024 Las Vegas\n3: Smartly ADVANCE New York (Adobe-Sponsored)\n4: Adobe Max 2024 Miami",
+  "categories": ["Print Production", "Pre-press", "Event Production", "Vendor Coordination"],
+  "cover": {"large": "images/1.jpeg", "small": "images/small/1.jpeg", "alt": "Adobe event production project cover"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "Adobe event preview 1"},
+    {"src": "images/small/2.jpeg", "alt": "Adobe event preview 2"}
+  ],
+  "gallery": [
+    {"src": "images/1.jpeg", "alt": "Adobe event image 1"},
+    {"src": "images/2.jpeg", "alt": "Adobe event image 2"},
+    {"src": "images/3.jpeg", "alt": "Adobe event image 3"},
+    {"src": "images/4.jpeg", "alt": "Adobe event image 4"},
+    {"src": "images/5.jpeg", "alt": "Adobe event image 5"},
+    {"src": "images/6.jpeg", "alt": "Adobe event image 6"},
+    {"src": "images/7.jpeg", "alt": "Adobe event image 7"}
+  ]
+}

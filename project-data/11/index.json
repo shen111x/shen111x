@@ -1,0 +1,22 @@
+{
+  "number": "11",
+  "title": "Contemporary Anxiety\nExhibition 3D Rendering",
+  "year": "Sept 2023",
+  "client": "Production Shen1x",
+  "description": "Production Shen1x is a brand dedicated to expressing existentialism and liminality through communication in design, founded on the awareness of self-existence. The company operates across various high-end sublimes, including fine art, prints, music and product design.\n\nIts style is characterized by a youthful flair, breaking away from conventional norms and infusing products with a unique perspective and philosophy.",
+  "concept": "The theme of this art exhibition is anxiety, and my concept involves using controlled lighting to highlight specific areas while leaving all exhibited works in dark, unlit spaces. This approach aims to elevate the inherent emotions conveyed by the artworks, embracing an existential anxiety. Additionally, a peculiar vending machine and photographic pieces at the entrance set the tone for the exhibition.",
+  "categories": ["3D Rendering", "Exhibition Design", "Space Design"],
+  "cover": {"large": "images/1.mp4", "small": "images/small/1.jpeg", "alt": "Contemporary Anxiety exhibition cover"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "Contemporary Anxiety preview 1"},
+    {"src": "images/small/2.jpeg", "alt": "Contemporary Anxiety preview 2"},
+    {"src": "images/small/3.jpeg", "alt": "Contemporary Anxiety preview 3"}
+  ],
+  "gallery": [
+    {"src": "images/1.mp4", "type": "video", "alt": "Contemporary Anxiety rendering 1"},
+    {"src": "images/2.mp4", "type": "video", "alt": "Contemporary Anxiety rendering 2"},
+    {"src": "images/3.mp4", "type": "video", "alt": "Contemporary Anxiety rendering 3"},
+    {"src": "images/4.mp4", "type": "video", "alt": "Contemporary Anxiety rendering 4"},
+    {"src": "images/5.mp4", "type": "video", "alt": "Contemporary Anxiety rendering 5"}
+  ]
+}

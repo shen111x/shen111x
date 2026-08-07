@@ -1,0 +1,23 @@
+{
+  "number": "10",
+  "title": "Big Sunday NPO\nLogo & Brand Identity",
+  "year": "Jan 2024",
+  "client": "Big Sunday",
+  "description": "Big Sunday is a non-profit organization that has been making a significant impact in the realm of community service and volunteering. Founded in 1999 by David Levinson, this Los Angeles-based NPO has been dedicated to fostering a sense of unity and social responsibility through a wide array of programs and events.\n\nBig Sunday's mission is to bring together diverse communities and individuals to engage in acts of kindness and goodwill. They offer a broad spectrum of volunteer opportunities, ranging from food drives and home repairs to educational initiatives and arts projects.",
+  "concept": "My strategy is to infinitely amplify extremely basic aspects: friendly, helpful, and approachable. I visualized all the keywords I got from company value and mission and transformed them into a layout system instead of a straight graphic, and used this form to drive the identity.",
+  "categories": ["Logo Design", "Visual Identity", "Typography", "Web Design", "Cross-Channel Campaign", "Concept Design", "Business Card"],
+  "cover": {"large": "images/2.jpeg", "small": "images/small/1.jpeg", "alt": "Big Sunday brand identity cover"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "Big Sunday preview 1"},
+    {"src": "images/small/2.jpeg", "alt": "Big Sunday preview 2"},
+    {"src": "images/small/3.jpeg", "alt": "Big Sunday preview 3"}
+  ],
+  "gallery": [
+    {"src": "images/1.mp4", "type": "video", "alt": "Big Sunday identity motion"},
+    {"src": "images/2.jpeg", "alt": "Big Sunday identity image 2"},
+    {"src": "images/3.jpeg", "alt": "Big Sunday identity image 3"},
+    {"src": "images/4.jpeg", "alt": "Big Sunday identity image 4"},
+    {"src": "images/5.jpeg", "alt": "Big Sunday identity image 5"},
+    {"src": "images/6.jpeg", "alt": "Big Sunday identity image 6"}
+  ]
+}

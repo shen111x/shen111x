@@ -1,0 +1,21 @@
+{
+  "number": "5",
+  "title": "Vie Mobile Blogging\nBranding & UI/UX",
+  "year": "Aug 2024",
+  "client": "Vie App",
+  "description": "Vie is designed to provide a user-friendly interface and visual system that allows users to create and customize blogs effortlessly. Users can integrate multiple media formats, such as text, images, and videos, into their posts and define how their blogs behave on mobile devices. The software ensures easy navigation, enabling users to enjoy the blogging process without stress while offering a comfortable environment to store and browse their posts.\n\nThis mobile blogging software empowers users to easily create and customize blogs directly from their smartphones. It supports multiple media formats, allowing users to integrate text, images, videos, and more into their posts. Additionally, users can define how their blogs behave on mobile devices, ensuring an optimized and personalized experience for their audience.",
+  "concept": "The concept I designed revolves around creating a seamless and intuitive blogging experience on mobile devices. It focuses on providing users with the flexibility to customize their blogs with various media formats while ensuring easy navigation and a stress-free interface.",
+  "categories": ["Logo Design", "Visual Identity", "Typography", "UI/UX Design", "User Flow", "Components Library", "Story Board"],
+  "cover": {"large": "images/1.jpeg", "small": "images/small/1.jpeg", "alt": "Vie mobile blogging project cover"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "Vie app preview 1"},
+    {"src": "images/small/2.jpeg", "alt": "Vie app preview 2"},
+    {"src": "images/small/3.jpeg", "alt": "Vie app preview 3"}
+  ],
+  "gallery": [
+    {"src": "images/1.jpeg", "alt": "Vie app image 1"},
+    {"src": "images/2.jpeg", "alt": "Vie app image 2"},
+    {"src": "images/3.jpeg", "alt": "Vie app image 3"},
+    {"src": "images/4.jpeg", "alt": "Vie app image 4"}
+  ]
+}

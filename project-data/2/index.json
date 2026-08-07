@@ -1,0 +1,25 @@
+{
+  "number": "2",
+  "title": "Production SHENIX\nFashion Brand Identity",
+  "year": "May 2023",
+  "client": "Production Shen1x",
+  "description": "Production Shen1x is a brand dedicated to expressing existentialism and liminality through communication in design, founded on the awareness of self-existence. The company operates across various high-end sublimes, including fine art, prints, music and product design.\n\nIts style is characterized by a youthful flair, breaking away from conventional norms and infusing products with a unique perspective and philosophy.",
+  "concept": "The brand's theme revolves around existentialism and limitations, leading me to adopt an experimental layout and interactive approach. The software allows users to customize the brand's T-shirts. I incorporated overlapping and repetitive elements in the interface to create a stacked, breathless sensation, serving as an activating mechanism for the brand.",
+  "categories": ["Art Direction", "Logo Design", "Visual Identity", "UI/UX Design", "Landing Page Design", "Merchandise Design", "Publication Design", "AR Filter Design"],
+  "cover": {"large": "images/1.jpeg", "small": "images/small/1.jpeg", "alt": "Production SHENIX project cover"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "Production SHENIX preview 1"},
+    {"src": "images/small/2.jpeg", "alt": "Production SHENIX preview 2"},
+    {"src": "images/small/3.jpeg", "alt": "Production SHENIX preview 3"}
+  ],
+  "gallery": [
+    {"src": "images/1.jpeg", "alt": "Production SHENIX image 1"},
+    {"src": "images/2.jpeg", "alt": "Production SHENIX image 2"},
+    {"src": "images/3.mp4", "type": "video", "alt": "Production SHENIX motion preview"},
+    {"src": "images/4.jpeg", "alt": "Production SHENIX image 4"},
+    {"src": "images/5.jpeg", "alt": "Production SHENIX image 5"},
+    {"src": "images/6.jpeg", "alt": "Production SHENIX image 6"},
+    {"src": "images/7.jpeg", "alt": "Production SHENIX image 7"},
+    {"src": "images/8.jpeg", "alt": "Production SHENIX image 8"}
+  ]
+}
