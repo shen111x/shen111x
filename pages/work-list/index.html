@@ -19,19 +19,23 @@
 </head>
 <body class="work-list-page">
   <iframe class="header-iframe" src="/components/header/index.html" title="Site header"></iframe>
-  <main class="work-list" aria-label="Work list">
-    <div work-list-item-number="1"></div>
-    <div work-list-item-number="3"></div>
-    <div work-list-item-number="13"></div>
-    <div work-list-item-number="10"></div>
-    <div work-list-item-number="8"></div>
-    <div work-list-item-number="5"></div>
-    <div work-list-item-number="2"></div>
-    <div work-list-item-number="7"></div>
-    <div work-list-item-number="11"></div>
-    <div work-list-item-number="4"></div>
-    <div work-list-item-number="9"></div>
-    <div work-list-item-number="6"></div>
+  <!--
+    Project 1 stays explicit with the full item structure so it is easy to find and edit.
+    The work-list script scans the numbered project-data folders through data-project-scan-max,
+    keeps this item in place, and inserts every other existing project automatically.
+  -->
+  <main class="work-list" aria-label="Work list" data-project-scan-max="99">
+    <div work-list-item-number="1">
+      <article class="work-list-item">
+        <a class="work-list-item__title-link" data-field="detail-link">
+          <h2 class="work-list-item__title" data-field="title"></h2>
+        </a>
+
+        <div class="work-list-item__gallery" tabindex="0" aria-label="Project cover gallery">
+          <div class="work-list-item__track" data-field="small-gallery"></div>
+        </div>
+      </article>
+    </div>
   </main>
   <div id="footer-container"></div>
   <script src="/js/universal.js"></script>

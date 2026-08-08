@@ -1,55 +1,93 @@
 (function () {
   'use strict';
 
-  var placeholders = Array.prototype.slice.call(document.querySelectorAll('[work-list-item-number]'));
-  if (!placeholders.length) return;
+  var list = document.querySelector('.work-list');
+  var example = list && list.querySelector('[work-list-item-number]');
+  if (!list || !example) return;
 
-  fetch('/pages/work-list/work-list-item/index.html')
-    .then(function (response) {
-      if (!response.ok) throw new Error('Work list item request failed: ' + response.status);
-      return response.text();
-    })
-    .then(function (template) {
-      placeholders.forEach(function (element) {
-        renderItem(element, template);
-      });
+  var template = example.innerHTML;
+  var scanMax = Number(list.getAttribute('data-project-scan-max'));
+  if (!Number.isInteger(scanMax) || scanMax < 1) scanMax = 99;
+
+  scanProjects(scanMax)
+    .then(function (projects) {
+      renderProjects(template, projects);
     })
     .catch(function (error) {
       console.error(error);
-      placeholders.forEach(function (element) {
-        element.innerHTML = '<span class="work-list-item__error">Unable to load project.</span>';
-      });
     });
 
-  function renderItem(element, template) {
-    var projectNumber = element.getAttribute('work-list-item-number');
+  function scanProjects(maxProjectNumber) {
+    var requests = [];
 
-    fetch(window.site.projectDataUrl(projectNumber))
+    for (var projectNumber = 1; projectNumber <= maxProjectNumber; projectNumber += 1) {
+      requests.push(loadProject(projectNumber));
+    }
+
+    return Promise.all(requests).then(function (projects) {
+      return projects.filter(function (project) {
+        return project !== null;
+      });
+    });
+  }
+
+  function loadProject(projectNumber) {
+    return fetch(window.site.projectDataUrl(projectNumber))
       .then(function (response) {
+        if (response.status === 404) return null;
         if (!response.ok) throw new Error('Project ' + projectNumber + ' request failed: ' + response.status);
         return response.json();
       })
       .then(function (project) {
-        element.innerHTML = template;
+        if (project === null) return null;
+        if (!project || !project.title ||
+          (!(project.smallGallery && project.smallGallery.length) && !project.cover)) {
+          throw new Error('Project ' + projectNumber + ' data is incomplete.');
+        }
 
-        var item = element.querySelector('.work-list-item');
-        var detailUrl = '/pages/project-detail/?project=' + encodeURIComponent(project.number);
-        var gallery = item.querySelector('.work-list-item__gallery');
-        var track = item.querySelector('[data-field="small-gallery"]');
-        var mediaItems = project.smallGallery || [project.cover];
-
-        item.dataset.projectNumber = project.number;
-        item.querySelector('[data-field="detail-link"]').href = detailUrl;
-        item.querySelector('[data-field="title"]').innerHTML = window.site.escapeHtml(project.title).replace(/\n/g, '<br>');
-
-        appendMedia(track, project, mediaItems);
-        initGallery(gallery);
+        // The folder number is the source of truth for links and asset paths.
+        project.number = String(projectNumber);
+        return project;
       })
       .catch(function (error) {
         console.error(error);
-        element.innerHTML = '<span class="work-list-item__error">Unable to load project ' +
-          window.site.escapeHtml(projectNumber) + '.</span>';
+        return null;
       });
+  }
+
+  function renderProjects(template, projects) {
+    if (!projects.length) {
+      example.remove();
+      return;
+    }
+
+    projects.sort(function (a, b) {
+      return Number(a.number) - Number(b.number);
+    });
+
+    projects.forEach(function (project, index) {
+      var element = index === 0 ? example : document.createElement('div');
+      element.setAttribute('work-list-item-number', project.number);
+      if (index > 0) list.appendChild(element);
+      renderItem(element, template, project);
+    });
+  }
+
+  function renderItem(element, template, project) {
+    element.innerHTML = template;
+
+    var item = element.querySelector('.work-list-item');
+    var detailUrl = '/pages/project-detail/?project=' + encodeURIComponent(project.number);
+    var gallery = item.querySelector('.work-list-item__gallery');
+    var track = item.querySelector('[data-field="small-gallery"]');
+    var mediaItems = project.smallGallery || [project.cover];
+
+    item.dataset.projectNumber = project.number;
+    item.querySelector('[data-field="detail-link"]').href = detailUrl;
+    item.querySelector('[data-field="title"]').innerHTML = window.site.escapeHtml(project.title).replace(/\n/g, '<br>');
+
+    appendMedia(track, project, mediaItems);
+    initGallery(gallery);
   }
 
   function appendMedia(track, project, mediaItems) {
