@@ -134,14 +134,50 @@
       var intervalId;
       var isHovering = false;
       var isPointerDown = false;
+      var pageWidth = 0;
+      var lastCarouselWidth = 0;
       var delay = carousel.dataset.carousel === 'small' ? 3800 : 4500;
       var initialDelay = carousel.dataset.carousel === 'small' ? 800 : 1000;
       var indicators = carousel.dataset.carousel === 'large' ?
         card.querySelector('[data-field="gallery-indicators"]') : null;
 
+      if (imageQuantity < 2) return;
+
+      syncSlideWidths();
       if (indicators) createIndicators();
 
-      if (imageQuantity < 2) return;
+      if ('ResizeObserver' in window) {
+        new ResizeObserver(syncSlideWidths).observe(carousel);
+      } else {
+        window.addEventListener('resize', syncSlideWidths);
+      }
+
+      function getTrackGap() {
+        var styles = window.getComputedStyle(track);
+        return parseFloat(styles.columnGap || styles.gap) || 0;
+      }
+
+      function syncSlideWidths() {
+        var carouselWidth = carousel.clientWidth;
+        if (!carouselWidth || carouselWidth === lastCarouselWidth) return;
+
+        var previousPageWidth = pageWidth;
+        var activeIndex = previousPageWidth ?
+          Math.round(carousel.scrollLeft / previousPageWidth) : 0;
+
+        track.style.setProperty('--carousel-slide-width', carouselWidth + 'px');
+        lastCarouselWidth = carouselWidth;
+        pageWidth = carouselWidth + getTrackGap();
+
+        if (previousPageWidth) {
+          carousel.scrollLeft = Math.min(
+            activeIndex * pageWidth,
+            carousel.scrollWidth - carousel.clientWidth
+          );
+          scrollNeed = pageWidth;
+          updateIndicators();
+        }
+      }
 
       function createIndicators() {
         for (var index = 0; index < imageQuantity; index += 1) {
@@ -153,16 +189,16 @@
           indicator.dataset.slideIndex = index;
           indicator.addEventListener('click', function (event) {
             event.stopPropagation();
-            carousel.scrollLeft = carousel.clientWidth * Number(event.currentTarget.dataset.slideIndex);
+            carousel.scrollLeft = pageWidth * Number(event.currentTarget.dataset.slideIndex);
           });
           indicators.appendChild(indicator);
         }
       }
 
       function updateIndicators() {
-        if (!indicators || !carousel.clientWidth) return;
+        if (!indicators || !pageWidth) return;
         var activeIndex = Math.min(imageQuantity - 1, Math.max(0,
-          Math.round(carousel.scrollLeft / carousel.clientWidth)));
+          Math.round(carousel.scrollLeft / pageWidth)));
         indicators.querySelectorAll('.project-card__gallery-indicator').forEach(function (indicator, index) {
           indicator.setAttribute('aria-current', index === activeIndex ? 'true' : 'false');
         });
@@ -170,15 +206,13 @@
 
       function updateInfo() {
         var scrollLeft = carousel.scrollLeft;
-        var scrollWidth = carousel.scrollWidth;
 
         restartInterval();
 
-        scrollNeed = (scrollWidth / imageQuantity) -
-          (scrollLeft % (scrollWidth / imageQuantity));
+        scrollNeed = pageWidth - (scrollLeft % pageWidth);
 
         if (scrollNeed < 3) {
-          scrollNeed = scrollWidth / imageQuantity;
+          scrollNeed = pageWidth;
         }
 
         updateIndicators();

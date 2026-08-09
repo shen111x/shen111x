@@ -1,0 +1,25 @@
+{
+  "number": "simple-human",
+  "title": "Simple Human Organic Website\nEcommerce Production & PDP",
+  "year": "2024 to 2026",
+  "client": "Simple Human LLC",
+  "description": "I was contracted as a graphic designer and consultant to support Simple Human's US and UK organic websites and ecommerce channels. Working with the marketing team and reporting to the Art Director and Creative Director, I helped update the PDP system and produced supporting assets for Amazon, Wayfair, email invitations, event handouts, shop banners, and category covers.\n\nAcross 2024 to 2026, I created more than 1,000 individually exported assets covering over 100 SKUs. PDP and organic website production formed the core of the engagement, with each deliverable adapted for its market, platform, and placement while maintaining a consistent brand experience.",
+  "concept": "Simple Human combines modern utility with a refined sense of luxury. The design approach kept every layout simple, highly controlled, and cohesive across channels, while allowing product photography and key benefits to lead. The central challenge was translating one PDP system across different platform rules. Amazon required distinct desktop and mobile formats, Wayfair used a shared image format across devices, and the organic websites introduced three responsive breakpoints. I developed a flexible production logic for composition, scale, and information hierarchy so the brand remained consistent through every size and context.",
+  "categories": ["Production Design", "Ecommerce Design", "PDP Assets", "Website Assets", "Digital Marketing", "Cross Platform Design"],
+  "cover": {"large": "images/1.mp4", "small": "images/small/1.jpeg", "alt": "Simple Human ecommerce production project cover"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "Simple Human project preview 1"},
+    {"src": "images/small/2.jpeg", "alt": "Simple Human project preview 2"},
+    {"src": "images/small/3.jpeg", "alt": "Simple Human project preview 3"}
+  ],
+  "gallery": [
+    {"src": "images/1.mp4", "type": "video", "alt": "Simple Human ecommerce production video 1"},
+    {"src": "images/2.mp4", "type": "video", "alt": "Simple Human ecommerce production video 2"},
+    {"src": "images/3.mp4", "type": "video", "alt": "Simple Human ecommerce production video 3"},
+    {"src": "images/4.jpeg", "alt": "Simple Human ecommerce production image 4"},
+    {"src": "images/5.jpeg", "alt": "Simple Human ecommerce production image 5"},
+    {"src": "images/6.jpeg", "alt": "Simple Human ecommerce production image 6"},
+    {"src": "images/7.jpeg", "alt": "Simple Human ecommerce production image 7"},
+    {"src": "images/8.jpeg", "alt": "Simple Human ecommerce production image 8"}
+  ]
+}

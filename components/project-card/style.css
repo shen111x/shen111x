@@ -53,13 +53,15 @@
 
 .carousel__track {
   display: flex;
+  gap: 10px;
   width: 100%;
   height: 100%;
 }
 
 .carousel__slide {
-  flex: 0 0 100%;
-  min-width: 100%;
+  flex: 0 0 var(--carousel-slide-width, 100%);
+  width: var(--carousel-slide-width, 100%);
+  min-width: var(--carousel-slide-width, 100%);
   min-height: 100%;
 }
 
