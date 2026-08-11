@@ -7,9 +7,13 @@
 
   var template = example.innerHTML;
   var scanMax = Number(list.getAttribute('data-project-scan-max'));
+  var priorityProjects = (list.getAttribute('data-project-priority') || '')
+    .split(',')
+    .map(function (projectId) { return projectId.trim(); })
+    .filter(Boolean);
   if (!Number.isInteger(scanMax) || scanMax < 1) scanMax = 99;
 
-  scanProjects(scanMax)
+  scanProjects(scanMax, priorityProjects)
     .then(function (projects) {
       renderProjects(template, projects);
     })
@@ -17,14 +21,15 @@
       console.error(error);
     });
 
-  function scanProjects(maxProjectNumber) {
-    var requests = [];
+  function scanProjects(maxProjectNumber, priorityProjectIds) {
+    var projectIds = priorityProjectIds.slice();
 
     for (var projectNumber = 1; projectNumber <= maxProjectNumber; projectNumber += 1) {
-      requests.push(loadProject(projectNumber));
+      var projectId = String(projectNumber);
+      if (projectIds.indexOf(projectId) === -1) projectIds.push(projectId);
     }
 
-    return Promise.all(requests).then(function (projects) {
+    return Promise.all(projectIds.map(loadProject)).then(function (projects) {
       return projects.filter(function (project) {
         return project !== null;
       });
@@ -45,7 +50,7 @@
           throw new Error('Project ' + projectNumber + ' data is incomplete.');
         }
 
-        // The folder number is the source of truth for links and asset paths.
+        // The folder identifier is the source of truth for links and asset paths.
         project.number = String(projectNumber);
         return project;
       })
@@ -60,10 +65,6 @@
       example.remove();
       return;
     }
-
-    projects.sort(function (a, b) {
-      return Number(a.number) - Number(b.number);
-    });
 
     projects.forEach(function (project, index) {
       var element = index === 0 ? example : document.createElement('div');

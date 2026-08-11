@@ -1,0 +1,21 @@
+{
+  "number": "butter-cloth",
+  "title": "Buttercloth Seasonal Campaign\nEmail & Social Design",
+  "year": "2025",
+  "client": "Buttercloth",
+  "description": "A seasonal ecommerce campaign system created for Buttercloth across email and social media. The work included Presidents' Day and Valentine's Day promotions, product focused layouts, campaign graphics, image retouching, and channel specific adaptations designed to support a clear and consistent shopping experience.\n\nThe system brought product photography, promotional messaging, and calls to action into a cohesive visual structure that could be applied across different campaign themes and customer touchpoints.",
+  "concept": "The design approach balances Buttercloth's polished apparel photography with simple typography, controlled spacing, and flexible promotional layouts. A consistent hierarchy allows each campaign to shift in color and tone while preserving the same recognizable structure across email, Instagram, and ecommerce placements.",
+  "categories": ["Email Campaign", "Social Media Design", "Ecommerce Design", "Campaign System", "Image Retouching", "Production Design"],
+  "cover": {"large": "images/1.jpeg", "small": "images/small/1.jpeg", "alt": "Buttercloth seasonal campaign project cover"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "Buttercloth campaign preview 1"},
+    {"src": "images/small/2.jpeg", "alt": "Buttercloth campaign preview 2"},
+    {"src": "images/small/3.jpeg", "alt": "Buttercloth campaign preview 3"}
+  ],
+  "gallery": [
+    {"src": "images/1.jpeg", "alt": "Buttercloth Presidents' Day campaign assets"},
+    {"src": "images/2.jpeg", "alt": "Buttercloth Valentine's Day email campaign"},
+    {"src": "images/3.jpeg", "alt": "Buttercloth email campaign design system"},
+    {"src": "images/4.jpeg", "alt": "Buttercloth campaign image retouching"}
+  ]
+}

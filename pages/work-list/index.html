@@ -21,10 +21,10 @@
   <iframe class="header-iframe" src="/components/header/index.html" title="Site header"></iframe>
   <!--
     Project 1 stays explicit with the full item structure so it is easy to find and edit.
-    The work-list script scans the numbered project-data folders through data-project-scan-max,
-    keeps this item in place, and inserts every other existing project automatically.
+    The work-list script loads the priority projects first, then scans the remaining numbered
+    project-data folders through data-project-scan-max and inserts them automatically.
   -->
-  <main class="work-list" aria-label="Work list" data-project-scan-max="99">
+  <main class="work-list" aria-label="Work list" data-project-priority="1,simple-human,butter-cloth" data-project-scan-max="99">
     <div work-list-item-number="1">
       <article class="work-list-item">
         <a class="work-list-item__title-link" data-field="detail-link">
