@@ -82,8 +82,17 @@
 .project-card__gallery-link { display: block; min-width: 0; }
 .project-card__gallery {
   width: 100%;
-  aspect-ratio: 1.6 / 1;
+  aspect-ratio: 1.7 / 1;
   cursor: pointer;
+}
+
+.project-card__gallery .carousel__slide {
+  aspect-ratio: 1.7 / 1;
+}
+
+.project-card__gallery .carousel__slide img,
+.project-card__gallery .carousel__slide video {
+  object-position: top center;
 }
 
 .project-card__gallery-indicators-wrap {

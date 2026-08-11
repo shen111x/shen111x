@@ -14,12 +14,13 @@
   ],
   "gallery": [
     {"src": "images/1.mp4", "type": "video", "alt": "Simple Human ecommerce production video 1"},
-    {"src": "images/2.mp4", "type": "video", "alt": "Simple Human ecommerce production video 2"},
+    {"src": "images/2.jpeg", "alt": "Simple Human ecommerce production image 2"},
     {"src": "images/3.mp4", "type": "video", "alt": "Simple Human ecommerce production video 3"},
-    {"src": "images/4.jpeg", "alt": "Simple Human ecommerce production image 4"},
+    {"src": "images/4.jpg", "alt": "Simple Human ecommerce production image 4"},
     {"src": "images/5.jpeg", "alt": "Simple Human ecommerce production image 5"},
     {"src": "images/6.jpeg", "alt": "Simple Human ecommerce production image 6"},
     {"src": "images/7.jpeg", "alt": "Simple Human ecommerce production image 7"},
-    {"src": "images/8.jpeg", "alt": "Simple Human ecommerce production image 8"}
+    {"src": "images/8.jpeg", "alt": "Simple Human ecommerce production image 8"},
+    {"src": "images/9.jpeg", "alt": "Simple Human ecommerce production image 9"}
   ]
 }
