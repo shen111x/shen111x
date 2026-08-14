@@ -1,0 +1,27 @@
+{
+  "number": "smart-color",
+  "title": "SMART COLORS Brand Rebuild\nProduct Experience & Launch",
+  "year": "2025 to 2026",
+  "client": "TETRACHROM",
+  "description": "SMART COLORS is a B2B Shopify application by TETRACHROM that helps online retailers improve product discovery through accurate, AI powered color search. I was contracted to lead the full rebrand and establish a cohesive visual direction across the brand, product, marketing, and investor experience. A key part of the rebrand was restructuring the typography system so the product could communicate technical accuracy while remaining clear, lightweight, and approachable.\n\nI designed the primary product interface and collaborated on its user experience, user flows, and interaction logic. The broader engagement included the complete marketing website and waitlist page, feature graphics, a custom icon set, Shopify App Store assets, a 15 page pitch deck, a rich text email signature delivered for direct copy and paste use, a LinkedIn banner, and a future customer KPI dashboard built around Shopify's component library and interface standards. I also created a 90 second motion graphic product demo from the ground up, developing the storyboard, pacing, graphic system, interface mockups, animation, and music sequence as one continuous product narrative.",
+  "concept": "SMART COLORS is designed as a lightweight tool that integrates naturally into a retailer's existing Shopify experience. The visual system uses white space as a neutral field, allowing accurate search results, product colors, and the spectrum inside the color dialog to remain the clearest and most expressive elements across the brand and interface.",
+  "categories": ["Art Direction & Rebranding", "Visual Identity & Typography", "Product UI/UX", "Website Design", "Shopify App & Dashboard Design", "Feature Graphics & Icon Design", "Pitch Deck Design", "Motion Design & Storyboarding", "Email & Social Design"],
+  "cover": {"large": "images/1.jpeg", "small": "images/small/1.jpeg", "alt": "SMART COLORS rebrand and product experience cover"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "SMART COLORS project preview 1"},
+    {"src": "images/small/2.jpeg", "alt": "SMART COLORS project preview 2"},
+    {"src": "images/small/3.jpeg", "alt": "SMART COLORS project preview 3"}
+  ],
+  "gallery": [
+    {"src": "images/1.jpeg", "alt": "SMART COLORS responsive marketing website"},
+    {"src": "images/2.mp4", "type": "video", "alt": "SMART COLORS brand and product motion overview"},
+    {"src": "images/3.jpeg", "alt": "SMART COLORS landing page feature graphics and custom icons"},
+    {"src": "images/4.jpeg", "alt": "SMART COLORS pitch deck design"},
+    {"src": "images/5.jpeg", "alt": "SMART COLORS rich text email signature system"},
+    {"src": "images/6.jpeg", "alt": "SMART COLORS Shopify KPI dashboard system"},
+    {"src": "images/7.mp4", "type": "video", "alt": "SMART COLORS product interface motion"},
+    {"src": "images/8.jpeg", "alt": "SMART COLORS internal brand documents"},
+    {"src": "images/9.jpeg", "alt": "SMART COLORS Shopify App Store experience"},
+    {"src": "images/10.mp4", "type": "video", "alt": "SMART COLORS product demo video"}
+  ]
+}

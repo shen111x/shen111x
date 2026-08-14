@@ -11,9 +11,13 @@
     .split(',')
     .map(function (projectId) { return projectId.trim(); })
     .filter(Boolean);
+  var excludedProjects = (list.getAttribute('data-project-exclude') || '')
+    .split(',')
+    .map(function (projectId) { return projectId.trim(); })
+    .filter(Boolean);
   if (!Number.isInteger(scanMax) || scanMax < 1) scanMax = 99;
 
-  scanProjects(scanMax, priorityProjects)
+  scanProjects(scanMax, priorityProjects, excludedProjects)
     .then(function (projects) {
       renderProjects(template, projects);
     })
@@ -21,12 +25,16 @@
       console.error(error);
     });
 
-  function scanProjects(maxProjectNumber, priorityProjectIds) {
-    var projectIds = priorityProjectIds.slice();
+  function scanProjects(maxProjectNumber, priorityProjectIds, excludedProjectIds) {
+    var projectIds = priorityProjectIds.filter(function (projectId) {
+      return excludedProjectIds.indexOf(projectId) === -1;
+    });
 
     for (var projectNumber = 1; projectNumber <= maxProjectNumber; projectNumber += 1) {
       var projectId = String(projectNumber);
-      if (projectIds.indexOf(projectId) === -1) projectIds.push(projectId);
+      if (projectIds.indexOf(projectId) === -1 && excludedProjectIds.indexOf(projectId) === -1) {
+        projectIds.push(projectId);
+      }
     }
 
     return Promise.all(projectIds.map(loadProject)).then(function (projects) {
