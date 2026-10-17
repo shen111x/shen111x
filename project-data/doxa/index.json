@@ -1,0 +1,26 @@
+{
+  "number": "doxa",
+  "title": "DOXA Studio\nBrand Identity & Art Direction",
+  "year": "2026",
+  "client": "DOXA",
+  "description": "DOXA is a film and creative studio whose manifesto positions internet culture as the ground for a new generation of filmmakers. Drawing on the idea of carnival, it sees memes, digital folklore, and collective participation as material for ambitious storytelling. Its name brings together common belief and divine glory, expressing a desire to connect popular culture with artistic excellence and spiritual purpose.\n\nI developed a visual identity that translates this ambition into a recognizable studio brand. The work spans the logo and its variations, typography, a CRT inspired color system, and applications for YouTube thumbnails and channel branding. Classical references and the texture of screen media give DOXA a visual language that connects its cinematic aspirations with the digital culture it comes from.",
+  "concept": "The identity brings classical form into the visual world of the screen. The logo takes its starting point from the classical Greek column, translating the rhythm of its fluting and architectural proportions into repeated contours within the letterforms. These lines give the mark a sense of structure while creating room for the color separation of its CRT treatment.\n\nBerlina balances a clean, contemporary linear structure with the subtle thick-to-thin variation of a pen stroke. Its flowing strokes retain some of the character associated with serif typography, with restrained terminals that keep the overall impression modern. Paired with Nature for supporting text, it connects the expressive logo to a clear typographic system.\n\nThe palette draws from the separation of red, green, and blue in CRT screens. Red and blue inform the dominant purple hue, while the highlight carries a 2% green tint in place of pure white. Muted purple tones and this faint green cast bring the screen reference into the broader identity. Together, the column, typography, and color system express DOXA's ambition to elevate the everyday folklore of the internet into lasting cinematic work.",
+  "categories": ["Art Direction", "Brand Identity", "Logo Design", "Typography System", "Color System", "YouTube & Social Branding"],
+  "cover": {"large": "images/1.jpeg", "small": "images/small/1.jpeg", "alt": "DOXA Studio visual identity and layered wordmark"},
+  "smallGallery": [
+    {"src": "images/small/1.jpeg", "alt": "DOXA Studio layered black wordmark on a white background"},
+    {"src": "images/small/2.jpeg", "alt": "DOXA purple palette progressing to a pale green tinted highlight"},
+    {"src": "images/small/3.jpeg", "alt": "DOXA stacked logo and typography applied to a Royal Foot Guards thumbnail"}
+  ],
+  "gallery": [
+    {"src": "images/1.jpeg", "alt": "DOXA Studio wordmark over a cinematic car interior using Color Dodge blending"},
+    {"src": "images/2.jpeg", "alt": "DOXA wordmark with CRT color separation and the studio's manifesto question"},
+    {"src": "images/3.jpeg", "alt": "Classical Greek column photograph and line illustration showing the logo's architectural inspiration"},
+    {"src": "images/4.jpeg", "alt": "DOXA Studio horizontal wordmark with repeated linear contours on black"},
+    {"src": "images/5.jpeg", "alt": "DOXA stacked logo variations in monochrome and with CRT color separation"},
+    {"src": "images/6.jpeg", "alt": "DOXA typography system showing Berlina Regular and Bold with Nature Regular and Thin"},
+    {"src": "images/7.jpeg", "alt": "DOXA purple and green tinted color palette with text and background pairing examples"},
+    {"src": "images/8.jpeg", "alt": "Three DOXA YouTube thumbnail styles combining film stills, typography, and logo placement"},
+    {"src": "images/9.jpeg", "alt": "DOXA YouTube channel mockup with a CRT scanline banner and stacked logo avatar"}
+  ]
+}
